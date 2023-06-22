@@ -23,9 +23,6 @@ namespace ISFCprotopype
                 receiptItem[i] = new ReceiptItem();
                 //orderList.Controls.Add(receiptItem[i]);
             }
-            RoundButton button1 = new RoundButton();
-            button1.Text = "Add";
-            orderList.Controls.Add(button1);
         }
     }
 }
