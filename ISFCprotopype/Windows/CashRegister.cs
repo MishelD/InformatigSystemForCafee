@@ -16,6 +16,7 @@ namespace ISFCprotopype
         public CashRegister()
         {
             InitializeComponent();
+            SetBGColor();
             ReceiptItem[] receiptItem;
             receiptItem = new ReceiptItem[10];
             for (int i = 0; i < receiptItem.Length; i++)
@@ -23,6 +24,23 @@ namespace ISFCprotopype
                 receiptItem[i] = new ReceiptItem();
                 //orderList.Controls.Add(receiptItem[i]);
             }
+        }
+
+        private void SetBGColor()
+        {
+            Color darkViolet = Color.FromArgb(73, 62, 194);
+            Color violet = Color.FromArgb(93, 95, 239);
+            Color lightViolet = Color.FromArgb(120, 121, 241);
+            Color greyWhite = Color.FromArgb(238, 238, 238);
+
+            BarPanel.BackColor = violet;
+            ReceiptWrap.BackColor = greyWhite;
+            orderButton.BackgroundColor = violet;
+        }
+
+        private void receiptItem1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

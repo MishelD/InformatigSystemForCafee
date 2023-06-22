@@ -33,8 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,10 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomElements\ReceiptItem.cs">
+    <Compile Include="CustomElements\CashRegister\MenuListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\CashRegister\ReceiptItem.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomElements\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomElements\RoundPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="databaseCafeDataSet.Designer.cs">
@@ -65,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomElements\RoundNumericUpDown.resx">
+      <DependentUpon>RoundNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\CashRegister.resx">
       <DependentUpon>CashRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="databaseCafeDataSet.xsc">
       <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
@@ -97,6 +112,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\Inter-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Inter-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Rubik-Medium.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -105,6 +123,11 @@
     <Content Include="databaseCafe.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\IconUI\exitLight.png" />
+    <None Include="Images\IconUI\plusCirlceViolet.png" />
+    <None Include="Images\IconUI\minusCirlceViolet.png" />
+    <Resource Include="Images\IconUI\userLight.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
