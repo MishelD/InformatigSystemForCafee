@@ -11,14 +11,14 @@ using ISFCprotopype.CustomElements;
 
 namespace ISFCprotopype
 {
-    public partial class CashRegister : Form
+    public partial class IngredientWarehouse : Form
     {
         private Color darkViolet = Color.FromArgb(73, 62, 194);
         private Color violet = Color.FromArgb(93, 95, 239);
         private Color lightViolet = Color.FromArgb(120, 121, 241);
         private Color greyWhite = Color.FromArgb(238, 238, 238);
 
-        public CashRegister()
+        public IngredientWarehouse()
         {
             InitializeComponent();
             SetBGColor();
@@ -43,7 +43,7 @@ namespace ISFCprotopype
         {
             BarPanel.BackColor = violet;
             ReceiptWrap.BackColor = greyWhite;
-            orderButton.BackgroundColor = violet;
+            addIngredientsButton.BackgroundColor = violet;
         }
 
         private void receiptItem1_Paint(object sender, PaintEventArgs e)
@@ -63,11 +63,11 @@ namespace ISFCprotopype
 
             if (amountCost == 0)
             {
-                orderButton.Enabled = false;
+                addIngredientsButton.Enabled = false;
             }
             else
             {
-                orderButton.Enabled = true;
+                addIngredientsButton.Enabled = true;
             }
         }
 

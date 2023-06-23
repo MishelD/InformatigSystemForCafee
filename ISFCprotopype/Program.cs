@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISFCprotopype.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ISFCprotopype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CashRegister());
+            Application.Run(new MainWindow());
         }
     }
 }

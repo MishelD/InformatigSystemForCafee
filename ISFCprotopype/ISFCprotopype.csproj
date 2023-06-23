@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ISFCprotopype.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -63,10 +66,11 @@
     <Compile Include="CustomElements\RoundPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="databaseCafeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
+    <Compile Include="Windows\IngredientWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\IngredientWarehouse.Designer.cs">
+      <DependentUpon>IngredientWarehouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\CashRegister.cs">
       <SubType>Form</SubType>
@@ -76,8 +80,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomElements\CashRegister\MenuListItem.resx">
+      <DependentUpon>MenuListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomElements\RoundNumericUpDown.resx">
       <DependentUpon>RoundNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\IngredientWarehouse.resx">
+      <DependentUpon>IngredientWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\CashRegister.resx">
       <DependentUpon>CashRegister.cs</DependentUpon>
@@ -92,17 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="databaseCafeDataSet.xsc">
-      <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="databaseCafeDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>databaseCafeDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="databaseCafeDataSet.xss">
-      <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="Windows\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,13 +128,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="databaseCafe.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\IconUI\exitLight.png" />
+    <None Include="Images\IconUI\LowSize\listLightSmall.png" />
     <Content Include="Images\IconUI\LowSize\logoutLightSmall.png" />
+    <None Include="Images\IconUI\LowSize\minusLightSmall.png" />
+    <None Include="Images\IconUI\LowSize\plusLightSmall.png" />
     <Content Include="Images\IconUI\LowSize\receiptLightSmall.png" />
     <Content Include="Images\IconUI\LowSize\userLightSmall.png" />
+    <None Include="Images\SquareImageNotFound.png" />
     <None Include="Images\IconUI\plusCirlceViolet.png" />
     <None Include="Images\IconUI\minusCirlceViolet.png" />
     <Resource Include="Images\IconUI\userLight.png" />

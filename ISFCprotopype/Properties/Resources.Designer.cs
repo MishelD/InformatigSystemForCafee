@@ -93,6 +93,16 @@ namespace ISFCprotopype.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap listLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("listLightSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoutLightSmall {
             get {
                 object obj = ResourceManager.GetObject("logoutLightSmall", resourceCulture);
@@ -113,9 +123,29 @@ namespace ISFCprotopype.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minusLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("minusLightSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plusCirlceViolet {
             get {
                 object obj = ResourceManager.GetObject("plusCirlceViolet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plusLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("plusLightSmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -137,6 +167,16 @@ namespace ISFCprotopype.Properties {
             get {
                 object obj = ResourceManager.GetObject("Rubik_Medium", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SquareImageNotFound {
+            get {
+                object obj = ResourceManager.GetObject("SquareImageNotFound", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
