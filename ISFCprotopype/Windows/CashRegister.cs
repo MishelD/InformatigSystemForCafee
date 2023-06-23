@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ISFCprotopype.CustomElements;
+using ISFCprotopype.CustomElements.CashRegister;
+using ISFCprotopype.databaseCafeDataSetTableAdapters;
 
 namespace ISFCprotopype
 {
@@ -30,13 +32,6 @@ namespace ISFCprotopype
                 orderList.Controls.Add(receiptItem[i]);
             }
             UpdateAmountLabel();
-            foreach (RoundButton button in menuFlowLayoutPanel.Controls)
-            {
-                button.Click += (s, e) =>
-                {
-                    orderList.Controls.Add(new ReceiptItem());
-                };
-            }
         }
 
         private void SetBGColor()
@@ -44,11 +39,6 @@ namespace ISFCprotopype
             BarPanel.BackColor = violet;
             ReceiptWrap.BackColor = greyWhite;
             orderButton.BackgroundColor = violet;
-        }
-
-        private void receiptItem1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         public void UpdateAmountLabel()
         {
@@ -75,7 +65,7 @@ namespace ISFCprotopype
         {
             foreach (ReceiptItem item in orderList.Controls)
             {
-                item.AmountValueChanged += (s, eventA) =>
+                item.AmountValueChanged += (s, args) =>
                 {
                     UpdateAmountLabel();
                 };
@@ -105,6 +95,59 @@ namespace ISFCprotopype
                 button.ForeColor = Color.White;
                 button.BorderSize = 0;
             }
+        }
+
+        private void CashRegister_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseCafeDataSet1.Блюда". При необходимости она может быть перемещена или удалена.
+            this.блюдаTableAdapter1.Fill(this.databaseCafeDataSet1.Блюда);
+            foreach (DataRow row in databaseCafeDataSet1.Блюда)
+            {
+                MenuListItem menuItem = new MenuListItem();
+                menuItem.NameItem = (string)row["dish_name"];
+                menuItem.CostItem = (float)Convert.ToSingle(row["price"]);
+                menuItem.MassItem = (float)Convert.ToSingle(row["mass"]);
+                menuFlowLayoutPanel.Controls.Add(menuItem);
+                
+                menuItem.Click += (s, args) =>
+                {
+                    ReceiptItem receiptItem = new ReceiptItem();
+                    orderList.Controls.Add(receiptItem);
+                };
+            }
+            //for (int i = 0; i < databaseCafeDataSet.Блюда.Count; i++)
+            //{
+            //    MenuListItem menuItem = new MenuListItem();
+            //    menuItem.NameItem = (string)databaseCafeDataSet.Блюда.Rows["dish_name"];
+            //    menuItem.NameItem = (string)databaseCafeDataSet.Блюда.Rows[i][1];
+            //    menuItem.MassItem = (float)databaseCafeDataSet.Блюда.Rows[i][5];
+            //    menuFlowLayoutPanel.Controls.Add(menuItem);
+            //}
+
+        }
+
+        private void блюдаBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.блюдаBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseCafeDataSet);
+
+        }
+
+        private void блюдаBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.блюдаBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.databaseCafeDataSet1);
+
+        }
+
+        private void блюдаBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.блюдаBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.databaseCafeDataSet1);
+
         }
     }
 }

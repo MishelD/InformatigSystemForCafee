@@ -24,9 +24,9 @@ namespace ISFCprotopype.CustomElements
         private Label _itemAmountLabel;
         private Label _itemAmountCostLabel;
 
-        private float _itemCost;
-
         private EventHandler onAmountValueChanged;
+
+        private float _itemCost;
 
         public float AmountCost
         {

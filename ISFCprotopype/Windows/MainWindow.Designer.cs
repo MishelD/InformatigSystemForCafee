@@ -286,6 +286,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainWindow";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

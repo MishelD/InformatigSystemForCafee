@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ISFCprotopype.CustomElements.CashRegister
 {
-    internal class MenuListItem : RoundPanel
+    internal class MenuListItem : UserControl
     {
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -16,8 +17,60 @@ namespace ISFCprotopype.CustomElements.CashRegister
         private Label itemNameLabel;
         private RoundPanel roundPanel1;
 
+        private string _nameItem;
+        public string NameItem
+        {
+            get { _nameItem = "Null"; return _nameItem; }
+            set
+            {
+                _nameItem = value;
+                itemNameLabel.Text = _nameItem;
+            }
+        }
+
+        private float _massItem;
+        public float MassItem
+        {
+            get { _massItem = 0; return _massItem; }
+            set
+            {
+                _massItem = value;
+                massItemLabel.Text = string.Format("{0} гр.", _massItem);
+            }
+        }
+
+        private float _costItem;
+        public float CostItem
+        {
+            get { _costItem = 0; return _costItem; }
+            set
+            {
+                _costItem = value;
+                costItemLabel.Text = string.Format("{0} ₽", _costItem);
+            }
+        }
+
+        private Image _imageItem;
+        public Image ImageItem
+        {
+            get { _imageItem = null; return _imageItem; }
+            set
+            {
+                _imageItem = value;
+                if (value != null)
+                {
+                    this.roundPanel1.BackgroundImage = _imageItem;
+                }
+                else
+                {
+                    this.roundPanel1.BackgroundImage = global::ISFCprotopype.Properties.Resources.SquareImageNotFound;
+                }
+            }
+        }
+
         public MenuListItem()
         {
+            InitializeComponent();
         }
 
         private void InitializeComponent()
@@ -93,9 +146,10 @@ namespace ISFCprotopype.CustomElements.CashRegister
             this.massItemLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.massItemLabel.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.massItemLabel.ForeColor = System.Drawing.Color.White;
-            this.massItemLabel.Location = new System.Drawing.Point(3, 0);
+            this.massItemLabel.Location = new System.Drawing.Point(0, 0);
+            this.massItemLabel.Margin = new System.Windows.Forms.Padding(0);
             this.massItemLabel.Name = "massItemLabel";
-            this.massItemLabel.Size = new System.Drawing.Size(78, 17);
+            this.massItemLabel.Size = new System.Drawing.Size(84, 17);
             this.massItemLabel.TabIndex = 0;
             this.massItemLabel.Text = "200 гр.";
             this.massItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,9 +159,10 @@ namespace ISFCprotopype.CustomElements.CashRegister
             this.costItemLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.costItemLabel.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.costItemLabel.ForeColor = System.Drawing.Color.White;
-            this.costItemLabel.Location = new System.Drawing.Point(87, 0);
+            this.costItemLabel.Location = new System.Drawing.Point(84, 0);
+            this.costItemLabel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.costItemLabel.Name = "costItemLabel";
-            this.costItemLabel.Size = new System.Drawing.Size(78, 17);
+            this.costItemLabel.Size = new System.Drawing.Size(84, 17);
             this.costItemLabel.TabIndex = 1;
             this.costItemLabel.Text = "200 ₽";
             this.costItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,9 +173,10 @@ namespace ISFCprotopype.CustomElements.CashRegister
             this.itemNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemNameLabel.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.itemNameLabel.ForeColor = System.Drawing.Color.White;
-            this.itemNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.itemNameLabel.Location = new System.Drawing.Point(0, 0);
+            this.itemNameLabel.Margin = new System.Windows.Forms.Padding(0);
             this.itemNameLabel.Name = "itemNameLabel";
-            this.itemNameLabel.Size = new System.Drawing.Size(162, 34);
+            this.itemNameLabel.Size = new System.Drawing.Size(168, 34);
             this.itemNameLabel.TabIndex = 1;
             this.itemNameLabel.Text = "Наименование блюда";
             this.itemNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,10 +184,9 @@ namespace ISFCprotopype.CustomElements.CashRegister
             // MenuListItem
             // 
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundColor = System.Drawing.Color.Transparent;
-            this.BorderRadius = 10;
             this.Controls.Add(this.roundPanel1);
             this.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
+            this.Name = "MenuListItem";
             this.Size = new System.Drawing.Size(168, 168);
             this.roundPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

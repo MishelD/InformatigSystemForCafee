@@ -29,25 +29,28 @@ namespace ISFCprotopype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BarPanel = new System.Windows.Forms.Panel();
             this.ReceiptWrap = new System.Windows.Forms.Panel();
-            this.orderButton = new ISFCprotopype.CustomElements.RoundButton();
             this.orderList = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.amountLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundButton1 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton2 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton3 = new ISFCprotopype.CustomElements.RoundButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orderButton = new ISFCprotopype.CustomElements.RoundButton();
             this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
             this.userButton = new ISFCprotopype.CustomElements.RoundButton();
+            this.databaseCafeDataSet1 = new ISFCprotopype.databaseCafeDataSet();
+            this.блюдаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.блюдаTableAdapter1 = new ISFCprotopype.databaseCafeDataSetTableAdapters.БлюдаTableAdapter();
+            this.tableAdapterManager1 = new ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager();
             this.BarPanel.SuspendLayout();
             this.ReceiptWrap.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BarPanel
@@ -75,29 +78,6 @@ namespace ISFCprotopype
             this.ReceiptWrap.Name = "ReceiptWrap";
             this.ReceiptWrap.Size = new System.Drawing.Size(356, 681);
             this.ReceiptWrap.TabIndex = 1;
-            // 
-            // orderButton
-            // 
-            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.orderButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.orderButton.BorderColor = System.Drawing.Color.Transparent;
-            this.orderButton.BorderRadius = 22;
-            this.orderButton.BorderSize = 0;
-            this.orderButton.FlatAppearance.BorderSize = 0;
-            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderButton.Font = new System.Drawing.Font("Inter", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orderButton.ForeColor = System.Drawing.Color.White;
-            this.orderButton.Location = new System.Drawing.Point(9, 624);
-            this.orderButton.Margin = new System.Windows.Forms.Padding(10);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(337, 47);
-            this.orderButton.TabIndex = 0;
-            this.orderButton.Text = "Заказать";
-            this.orderButton.TextColor = System.Drawing.Color.White;
-            this.orderButton.UseVisualStyleBackColor = false;
-            this.orderButton.EnabledChanged += new System.EventHandler(this.orderButton_EnabledChanged);
             // 
             // orderList
             // 
@@ -167,9 +147,6 @@ namespace ISFCprotopype
             this.menuFlowLayoutPanel.AutoScroll = true;
             this.menuFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton1);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton2);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton3);
             this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.menuFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -178,75 +155,38 @@ namespace ISFCprotopype
             this.menuFlowLayoutPanel.Size = new System.Drawing.Size(850, 681);
             this.menuFlowLayoutPanel.TabIndex = 2;
             // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton1.BorderRadius = 20;
-            this.roundButton1.BorderSize = 0;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Font = new System.Drawing.Font("Inter", 16.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton1.ForeColor = System.Drawing.Color.Black;
-            this.roundButton1.Location = new System.Drawing.Point(28, 20);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 168);
-            this.roundButton1.TabIndex = 21;
-            this.roundButton1.Text = "Наименование блюда";
-            this.roundButton1.TextColor = System.Drawing.Color.Black;
-            this.roundButton1.UseVisualStyleBackColor = false;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton2.BorderRadius = 20;
-            this.roundButton2.BorderSize = 0;
-            this.roundButton2.FlatAppearance.BorderSize = 0;
-            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton2.Font = new System.Drawing.Font("Inter", 16.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton2.ForeColor = System.Drawing.Color.Black;
-            this.roundButton2.Location = new System.Drawing.Point(232, 20);
-            this.roundButton2.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(168, 168);
-            this.roundButton2.TabIndex = 22;
-            this.roundButton2.Text = "Наименование блюда";
-            this.roundButton2.TextColor = System.Drawing.Color.Black;
-            this.roundButton2.UseVisualStyleBackColor = false;
-            // 
-            // roundButton3
-            // 
-            this.roundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton3.BorderRadius = 20;
-            this.roundButton3.BorderSize = 0;
-            this.roundButton3.FlatAppearance.BorderSize = 0;
-            this.roundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton3.Font = new System.Drawing.Font("Inter", 16.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton3.ForeColor = System.Drawing.Color.Black;
-            this.roundButton3.Location = new System.Drawing.Point(436, 20);
-            this.roundButton3.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(168, 168);
-            this.roundButton3.TabIndex = 23;
-            this.roundButton3.Text = "Наименование блюда";
-            this.roundButton3.TextColor = System.Drawing.Color.Black;
-            this.roundButton3.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.menuFlowLayoutPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(414, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 681);
             this.panel1.TabIndex = 3;
+            // 
+            // orderButton
+            // 
+            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.orderButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.orderButton.BorderColor = System.Drawing.Color.Transparent;
+            this.orderButton.BorderRadius = 22;
+            this.orderButton.BorderSize = 0;
+            this.orderButton.FlatAppearance.BorderSize = 0;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Inter", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderButton.ForeColor = System.Drawing.Color.White;
+            this.orderButton.Location = new System.Drawing.Point(9, 624);
+            this.orderButton.Margin = new System.Windows.Forms.Padding(10);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(337, 47);
+            this.orderButton.TabIndex = 0;
+            this.orderButton.Text = "Заказать";
+            this.orderButton.TextColor = System.Drawing.Color.White;
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.EnabledChanged += new System.EventHandler(this.orderButton_EnabledChanged);
             // 
             // exitButton
             // 
@@ -290,6 +230,32 @@ namespace ISFCprotopype
             this.userButton.TextColor = System.Drawing.Color.White;
             this.userButton.UseVisualStyleBackColor = false;
             // 
+            // databaseCafeDataSet1
+            // 
+            this.databaseCafeDataSet1.DataSetName = "databaseCafeDataSet";
+            this.databaseCafeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // блюдаBindingSource
+            // 
+            this.блюдаBindingSource.DataMember = "Блюда";
+            this.блюдаBindingSource.DataSource = this.databaseCafeDataSet1;
+            // 
+            // блюдаTableAdapter1
+            // 
+            this.блюдаTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.UpdateOrder = ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.БлюдаTableAdapter = this.блюдаTableAdapter1;
+            this.tableAdapterManager1.ЗаказыTableAdapter = null;
+            this.tableAdapterManager1.ИнгредиентыTableAdapter = null;
+            this.tableAdapterManager1.ПользователиTableAdapter = null;
+            this.tableAdapterManager1.Состав_блюдаTableAdapter = null;
+            this.tableAdapterManager1.Состав_заказаTableAdapter = null;
+            this.tableAdapterManager1.СотрудникиTableAdapter = null;
+            // 
             // CashRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,11 +268,13 @@ namespace ISFCprotopype
             this.Name = "CashRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Касса";
+            this.Load += new System.EventHandler(this.CashRegister_Load);
             this.BarPanel.ResumeLayout(false);
             this.ReceiptWrap.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuFlowLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,9 +292,13 @@ namespace ISFCprotopype
         private CustomElements.RoundButton userButton;
         private CustomElements.RoundButton exitButton;
         private System.Windows.Forms.Panel panel1;
-        private CustomElements.RoundButton roundButton1;
-        private CustomElements.RoundButton roundButton2;
-        private CustomElements.RoundButton roundButton3;
+        private databaseCafeDataSet databaseCafeDataSet;
+        private databaseCafeDataSetTableAdapters.БлюдаTableAdapter блюдаTableAdapter;
+        private databaseCafeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private databaseCafeDataSet databaseCafeDataSet1;
+        private System.Windows.Forms.BindingSource блюдаBindingSource;
+        private databaseCafeDataSetTableAdapters.БлюдаTableAdapter блюдаTableAdapter1;
+        private databaseCafeDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }
 
