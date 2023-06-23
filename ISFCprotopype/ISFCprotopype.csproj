@@ -124,6 +124,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\IconUI\exitLight.png" />
+    <Content Include="Images\IconUI\LowSize\logoutLightSmall.png" />
+    <Content Include="Images\IconUI\LowSize\receiptLightSmall.png" />
+    <Content Include="Images\IconUI\LowSize\userLightSmall.png" />
     <None Include="Images\IconUI\plusCirlceViolet.png" />
     <None Include="Images\IconUI\minusCirlceViolet.png" />
     <Resource Include="Images\IconUI\userLight.png" />

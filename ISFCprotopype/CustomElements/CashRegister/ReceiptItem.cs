@@ -26,6 +26,13 @@ namespace ISFCprotopype.CustomElements
 
         private float _itemCost;
 
+        private EventHandler onAmountValueChanged;
+
+        public float AmountCost
+        {
+            get { return _itemCost * _itemNumericUpDown.Value; }
+        }
+
         private Color darkViolet = Color.FromArgb(73, 62, 194);
         private Color violet = Color.FromArgb(93, 95, 239);
         private Color lightViolet = Color.FromArgb(120, 121, 241);
@@ -49,7 +56,8 @@ namespace ISFCprotopype.CustomElements
                 }
                 else
                 {
-                    _itemAmountCostLabel.Text = string.Format("{0} {1}", (float)_itemNumericUpDown.Value * _itemCost, "₽");
+                    _itemAmountCostLabel.Text = string.Format("{0} {1}", AmountCost, "₽");
+                    onAmountValueChanged.Invoke(this, EventArgs.Empty);
                 }
             };
         }
@@ -176,6 +184,25 @@ namespace ISFCprotopype.CustomElements
                 AnchorStyles.Left |
                 AnchorStyles.Right);
             _itemAmountLayoutPanel.Controls.Add(_itemAmountCostLabel, 1, 0);
+        }
+
+        public event EventHandler AmountValueChanged
+        {
+            add
+            {
+                onAmountValueChanged = (EventHandler)Delegate.Combine(onAmountValueChanged, value);
+            }
+            remove
+            {
+                onAmountValueChanged = (EventHandler)Delegate.Remove(onAmountValueChanged, value);
+            }
+        }
+        protected virtual void OnAmountValueChanged(EventArgs e)
+        {
+            if (onAmountValueChanged != null)
+            {
+                onAmountValueChanged(this, e);
+            }
         }
     }
 }

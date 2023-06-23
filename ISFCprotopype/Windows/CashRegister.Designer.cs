@@ -31,17 +31,13 @@ namespace ISFCprotopype
         {
             this.BarPanel = new System.Windows.Forms.Panel();
             this.ReceiptWrap = new System.Windows.Forms.Panel();
+            this.orderButton = new ISFCprotopype.CustomElements.RoundButton();
             this.orderList = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.amountLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.roundPanel1 = new ISFCprotopype.CustomElements.RoundPanel();
-            this.orderButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.receiptItem1 = new ISFCprotopype.CustomElements.ReceiptItem();
-            this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.UserButton = new ISFCprotopype.CustomElements.RoundButton();
             this.roundPanel2 = new ISFCprotopype.CustomElements.RoundPanel();
             this.roundPanel3 = new ISFCprotopype.CustomElements.RoundPanel();
             this.roundPanel4 = new ISFCprotopype.CustomElements.RoundPanel();
@@ -61,9 +57,11 @@ namespace ISFCprotopype
             this.roundPanel18 = new ISFCprotopype.CustomElements.RoundPanel();
             this.roundPanel19 = new ISFCprotopype.CustomElements.RoundPanel();
             this.roundPanel20 = new ISFCprotopype.CustomElements.RoundPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
+            this.UserButton = new ISFCprotopype.CustomElements.RoundButton();
             this.BarPanel.SuspendLayout();
             this.ReceiptWrap.SuspendLayout();
-            this.orderList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -97,6 +95,29 @@ namespace ISFCprotopype
             this.ReceiptWrap.Size = new System.Drawing.Size(351, 681);
             this.ReceiptWrap.TabIndex = 1;
             // 
+            // orderButton
+            // 
+            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.orderButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.orderButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.orderButton.BorderColor = System.Drawing.Color.Transparent;
+            this.orderButton.BorderRadius = 22;
+            this.orderButton.BorderSize = 0;
+            this.orderButton.Enabled = false;
+            this.orderButton.FlatAppearance.BorderSize = 0;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Inter Medium", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderButton.ForeColor = System.Drawing.Color.White;
+            this.orderButton.Location = new System.Drawing.Point(9, 624);
+            this.orderButton.Margin = new System.Windows.Forms.Padding(10);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(332, 47);
+            this.orderButton.TabIndex = 0;
+            this.orderButton.Text = "Заказать";
+            this.orderButton.TextColor = System.Drawing.Color.White;
+            this.orderButton.UseVisualStyleBackColor = false;
+            // 
             // orderList
             // 
             this.orderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -104,7 +125,6 @@ namespace ISFCprotopype
             | System.Windows.Forms.AnchorStyles.Right)));
             this.orderList.AutoScroll = true;
             this.orderList.BackColor = System.Drawing.Color.Transparent;
-            this.orderList.Controls.Add(this.receiptItem1);
             this.orderList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.orderList.Location = new System.Drawing.Point(9, 10);
             this.orderList.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
@@ -112,6 +132,8 @@ namespace ISFCprotopype
             this.orderList.Size = new System.Drawing.Size(332, 536);
             this.orderList.TabIndex = 2;
             this.orderList.WrapContents = false;
+            this.orderList.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlAdded);
+            this.orderList.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlRemoved);
             // 
             // tableLayoutPanel1
             // 
@@ -119,8 +141,8 @@ namespace ISFCprotopype
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.59544F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.40456F));
             this.tableLayoutPanel1.Controls.Add(this.amountLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 570);
@@ -138,11 +160,11 @@ namespace ISFCprotopype
             | System.Windows.Forms.AnchorStyles.Right)));
             this.amountLabel.BackColor = System.Drawing.Color.Transparent;
             this.amountLabel.Font = new System.Drawing.Font("Inter Medium", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountLabel.Location = new System.Drawing.Point(178, 0);
+            this.amountLabel.Location = new System.Drawing.Point(148, 0);
             this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(170, 44);
+            this.amountLabel.Size = new System.Drawing.Size(200, 44);
             this.amountLabel.TabIndex = 1;
-            this.amountLabel.Text = "2500 ₽";
+            this.amountLabel.Text = "0 ₽";
             this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
@@ -154,7 +176,7 @@ namespace ISFCprotopype
             this.label1.Font = new System.Drawing.Font("Inter Medium", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 44);
+            this.label1.Size = new System.Drawing.Size(139, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Итого:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,18 +214,6 @@ namespace ISFCprotopype
             this.flowLayoutPanel1.Size = new System.Drawing.Size(855, 681);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(409, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(855, 681);
-            this.panel1.TabIndex = 3;
-            // 
             // roundPanel1
             // 
             this.roundPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -218,85 +228,6 @@ namespace ISFCprotopype
             this.roundPanel1.Size = new System.Drawing.Size(168, 168);
             this.roundPanel1.TabIndex = 0;
             this.roundPanel1.TextColor = System.Drawing.Color.Black;
-            // 
-            // orderButton
-            // 
-            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.orderButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.orderButton.BorderColor = System.Drawing.Color.Transparent;
-            this.orderButton.BorderRadius = 22;
-            this.orderButton.BorderSize = 0;
-            this.orderButton.FlatAppearance.BorderSize = 0;
-            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderButton.Font = new System.Drawing.Font("Inter Medium", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.orderButton.ForeColor = System.Drawing.Color.White;
-            this.orderButton.Location = new System.Drawing.Point(9, 624);
-            this.orderButton.Margin = new System.Windows.Forms.Padding(10);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(332, 47);
-            this.orderButton.TabIndex = 0;
-            this.orderButton.Text = "Заказать";
-            this.orderButton.TextColor = System.Drawing.Color.White;
-            this.orderButton.UseVisualStyleBackColor = false;
-            // 
-            // receiptItem1
-            // 
-            this.receiptItem1.BackColor = System.Drawing.Color.White;
-            this.receiptItem1.BackgroundColor = System.Drawing.Color.White;
-            this.receiptItem1.BorderColor = System.Drawing.Color.Gray;
-            this.receiptItem1.BorderRadius = 10;
-            this.receiptItem1.BorderSize = 0;
-            this.receiptItem1.ForeColor = System.Drawing.Color.Black;
-            this.receiptItem1.Location = new System.Drawing.Point(0, 10);
-            this.receiptItem1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.receiptItem1.Name = "receiptItem1";
-            this.receiptItem1.Size = new System.Drawing.Size(316, 125);
-            this.receiptItem1.TabIndex = 0;
-            this.receiptItem1.TextColor = System.Drawing.Color.Black;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.exitButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.exitButton.BackgroundImage = global::ISFCprotopype.Properties.Resources.exitLight;
-            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exitButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.exitButton.BorderRadius = 10;
-            this.exitButton.BorderSize = 0;
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(9, 631);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(0);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(40, 40);
-            this.exitButton.TabIndex = 4;
-            this.exitButton.TextColor = System.Drawing.Color.White;
-            this.exitButton.UseVisualStyleBackColor = false;
-            // 
-            // UserButton
-            // 
-            this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.UserButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.UserButton.BackgroundImage = global::ISFCprotopype.Properties.Resources.userLight;
-            this.UserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.UserButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.UserButton.BorderRadius = 10;
-            this.UserButton.BorderSize = 0;
-            this.UserButton.FlatAppearance.BorderSize = 0;
-            this.UserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserButton.ForeColor = System.Drawing.Color.White;
-            this.UserButton.Location = new System.Drawing.Point(9, 10);
-            this.UserButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
-            this.UserButton.Name = "UserButton";
-            this.UserButton.Size = new System.Drawing.Size(40, 40);
-            this.UserButton.TabIndex = 3;
-            this.UserButton.TextColor = System.Drawing.Color.White;
-            this.UserButton.UseVisualStyleBackColor = false;
             // 
             // roundPanel2
             // 
@@ -583,6 +514,60 @@ namespace ISFCprotopype
             this.roundPanel20.TabIndex = 19;
             this.roundPanel20.TextColor = System.Drawing.Color.Black;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(409, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(855, 681);
+            this.panel1.TabIndex = 3;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.exitButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exitButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.exitButton.BorderRadius = 10;
+            this.exitButton.BorderSize = 0;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::ISFCprotopype.Properties.Resources.logoutLightSmall;
+            this.exitButton.Location = new System.Drawing.Point(9, 631);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(40, 40);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.TextColor = System.Drawing.Color.White;
+            this.exitButton.UseVisualStyleBackColor = false;
+            // 
+            // UserButton
+            // 
+            this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.UserButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.UserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UserButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.UserButton.BorderRadius = 10;
+            this.UserButton.BorderSize = 0;
+            this.UserButton.FlatAppearance.BorderSize = 0;
+            this.UserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserButton.ForeColor = System.Drawing.Color.White;
+            this.UserButton.Image = global::ISFCprotopype.Properties.Resources.userLightSmall;
+            this.UserButton.Location = new System.Drawing.Point(9, 10);
+            this.UserButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
+            this.UserButton.Name = "UserButton";
+            this.UserButton.Size = new System.Drawing.Size(40, 40);
+            this.UserButton.TabIndex = 3;
+            this.UserButton.TextColor = System.Drawing.Color.White;
+            this.UserButton.UseVisualStyleBackColor = false;
+            // 
             // CashRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,7 +583,6 @@ namespace ISFCprotopype
             this.Text = "Касса";
             this.BarPanel.ResumeLayout(false);
             this.ReceiptWrap.ResumeLayout(false);
-            this.orderList.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -619,7 +603,6 @@ namespace ISFCprotopype
         private CustomElements.RoundButton UserButton;
         private CustomElements.RoundButton exitButton;
         private System.Windows.Forms.Panel panel1;
-        private CustomElements.ReceiptItem receiptItem1;
         private CustomElements.RoundPanel roundPanel1;
         private CustomElements.RoundPanel roundPanel2;
         private CustomElements.RoundPanel roundPanel3;

@@ -93,6 +93,16 @@ namespace ISFCprotopype.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoutLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("logoutLightSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minusCirlceViolet {
             get {
                 object obj = ResourceManager.GetObject("minusCirlceViolet", resourceCulture);
@@ -106,6 +116,16 @@ namespace ISFCprotopype.Properties {
         internal static System.Drawing.Bitmap plusCirlceViolet {
             get {
                 object obj = ResourceManager.GetObject("plusCirlceViolet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap receiptLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("receiptLightSmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace ISFCprotopype.Properties {
         internal static System.Drawing.Bitmap userLight {
             get {
                 object obj = ResourceManager.GetObject("userLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userLightSmall {
+            get {
+                object obj = ResourceManager.GetObject("userLightSmall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
