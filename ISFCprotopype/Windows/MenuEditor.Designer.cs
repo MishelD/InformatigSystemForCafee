@@ -29,30 +29,44 @@ namespace ISFCprotopype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuEditor));
             this.BarPanel = new System.Windows.Forms.Panel();
             this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
             this.listButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.ReceiptWrap = new System.Windows.Forms.Panel();
-            this.addIngredientsButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.orderList = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.amountLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.menuFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundButton1 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton2 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton3 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton6 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton7 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton8 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton9 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton10 = new ISFCprotopype.CustomElements.RoundButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.databaseCafeDataSet = new ISFCprotopype.databaseCafeDataSet();
+            this.блюдаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.блюдаTableAdapter = new ISFCprotopype.databaseCafeDataSetTableAdapters.БлюдаTableAdapter();
+            this.tableAdapterManager = new ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager();
+            this.блюдаBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.блюдаBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.блюдаDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.BarPanel.SuspendLayout();
-            this.ReceiptWrap.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.menuFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingNavigator)).BeginInit();
+            this.блюдаBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // BarPanel
@@ -89,6 +103,7 @@ namespace ISFCprotopype
             this.exitButton.TabIndex = 4;
             this.exitButton.TextColor = System.Drawing.Color.White;
             this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // listButton
             // 
@@ -110,296 +125,226 @@ namespace ISFCprotopype
             this.listButton.TextColor = System.Drawing.Color.White;
             this.listButton.UseVisualStyleBackColor = false;
             // 
-            // ReceiptWrap
-            // 
-            this.ReceiptWrap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ReceiptWrap.Controls.Add(this.addIngredientsButton);
-            this.ReceiptWrap.Controls.Add(this.orderList);
-            this.ReceiptWrap.Controls.Add(this.tableLayoutPanel1);
-            this.ReceiptWrap.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ReceiptWrap.Location = new System.Drawing.Point(58, 0);
-            this.ReceiptWrap.Margin = new System.Windows.Forms.Padding(0);
-            this.ReceiptWrap.Name = "ReceiptWrap";
-            this.ReceiptWrap.Size = new System.Drawing.Size(356, 681);
-            this.ReceiptWrap.TabIndex = 1;
-            this.ReceiptWrap.Visible = false;
-            // 
-            // addIngredientsButton
-            // 
-            this.addIngredientsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addIngredientsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addIngredientsButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addIngredientsButton.BorderColor = System.Drawing.Color.Transparent;
-            this.addIngredientsButton.BorderRadius = 22;
-            this.addIngredientsButton.BorderSize = 0;
-            this.addIngredientsButton.FlatAppearance.BorderSize = 0;
-            this.addIngredientsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addIngredientsButton.Font = new System.Drawing.Font("Inter", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addIngredientsButton.ForeColor = System.Drawing.Color.White;
-            this.addIngredientsButton.Location = new System.Drawing.Point(9, 624);
-            this.addIngredientsButton.Margin = new System.Windows.Forms.Padding(10);
-            this.addIngredientsButton.Name = "addIngredientsButton";
-            this.addIngredientsButton.Size = new System.Drawing.Size(337, 47);
-            this.addIngredientsButton.TabIndex = 0;
-            this.addIngredientsButton.Text = "Добавить";
-            this.addIngredientsButton.TextColor = System.Drawing.Color.White;
-            this.addIngredientsButton.UseVisualStyleBackColor = false;
-            this.addIngredientsButton.EnabledChanged += new System.EventHandler(this.orderButton_EnabledChanged);
-            // 
-            // orderList
-            // 
-            this.orderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderList.AutoScroll = true;
-            this.orderList.BackColor = System.Drawing.Color.Transparent;
-            this.orderList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.orderList.Location = new System.Drawing.Point(9, 10);
-            this.orderList.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.orderList.Name = "orderList";
-            this.orderList.Size = new System.Drawing.Size(337, 536);
-            this.orderList.TabIndex = 2;
-            this.orderList.WrapContents = false;
-            this.orderList.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlAdded);
-            this.orderList.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlRemoved);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.59544F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.40456F));
-            this.tableLayoutPanel1.Controls.Add(this.amountLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 570);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(356, 44);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // amountLabel
-            // 
-            this.amountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.amountLabel.BackColor = System.Drawing.Color.Transparent;
-            this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountLabel.Location = new System.Drawing.Point(151, 0);
-            this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(202, 44);
-            this.amountLabel.TabIndex = 1;
-            this.amountLabel.Text = "0 ₽";
-            this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Итого:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuFlowLayoutPanel
-            // 
-            this.menuFlowLayoutPanel.AutoScroll = true;
-            this.menuFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton1);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton2);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton3);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton6);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton7);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton8);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton9);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton10);
-            this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.menuFlowLayoutPanel.Name = "menuFlowLayoutPanel";
-            this.menuFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.menuFlowLayoutPanel.Size = new System.Drawing.Size(850, 681);
-            this.menuFlowLayoutPanel.TabIndex = 2;
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton1.BorderRadius = 20;
-            this.roundButton1.BorderSize = 0;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton1.ForeColor = System.Drawing.Color.Black;
-            this.roundButton1.Location = new System.Drawing.Point(28, 20);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 168);
-            this.roundButton1.TabIndex = 21;
-            this.roundButton1.Text = "Наименование блюда";
-            this.roundButton1.TextColor = System.Drawing.Color.Black;
-            this.roundButton1.UseVisualStyleBackColor = false;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton2.BorderRadius = 20;
-            this.roundButton2.BorderSize = 0;
-            this.roundButton2.FlatAppearance.BorderSize = 0;
-            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton2.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton2.ForeColor = System.Drawing.Color.Black;
-            this.roundButton2.Location = new System.Drawing.Point(232, 20);
-            this.roundButton2.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(168, 168);
-            this.roundButton2.TabIndex = 22;
-            this.roundButton2.Text = "Наименование блюда";
-            this.roundButton2.TextColor = System.Drawing.Color.Black;
-            this.roundButton2.UseVisualStyleBackColor = false;
-            // 
-            // roundButton3
-            // 
-            this.roundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton3.BorderRadius = 20;
-            this.roundButton3.BorderSize = 0;
-            this.roundButton3.FlatAppearance.BorderSize = 0;
-            this.roundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton3.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton3.ForeColor = System.Drawing.Color.Black;
-            this.roundButton3.Location = new System.Drawing.Point(436, 20);
-            this.roundButton3.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(168, 168);
-            this.roundButton3.TabIndex = 23;
-            this.roundButton3.Text = "Наименование блюда";
-            this.roundButton3.TextColor = System.Drawing.Color.Black;
-            this.roundButton3.UseVisualStyleBackColor = false;
-            // 
-            // roundButton6
-            // 
-            this.roundButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton6.BorderRadius = 20;
-            this.roundButton6.BorderSize = 0;
-            this.roundButton6.FlatAppearance.BorderSize = 0;
-            this.roundButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton6.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton6.ForeColor = System.Drawing.Color.Black;
-            this.roundButton6.Location = new System.Drawing.Point(640, 20);
-            this.roundButton6.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton6.Name = "roundButton6";
-            this.roundButton6.Size = new System.Drawing.Size(168, 168);
-            this.roundButton6.TabIndex = 24;
-            this.roundButton6.Text = "Наименование блюда";
-            this.roundButton6.TextColor = System.Drawing.Color.Black;
-            this.roundButton6.UseVisualStyleBackColor = false;
-            // 
-            // roundButton7
-            // 
-            this.roundButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton7.BorderRadius = 20;
-            this.roundButton7.BorderSize = 0;
-            this.roundButton7.FlatAppearance.BorderSize = 0;
-            this.roundButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton7.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton7.ForeColor = System.Drawing.Color.Black;
-            this.roundButton7.Location = new System.Drawing.Point(28, 208);
-            this.roundButton7.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton7.Name = "roundButton7";
-            this.roundButton7.Size = new System.Drawing.Size(168, 168);
-            this.roundButton7.TabIndex = 25;
-            this.roundButton7.Text = "Наименование блюда";
-            this.roundButton7.TextColor = System.Drawing.Color.Black;
-            this.roundButton7.UseVisualStyleBackColor = false;
-            // 
-            // roundButton8
-            // 
-            this.roundButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton8.BorderRadius = 20;
-            this.roundButton8.BorderSize = 0;
-            this.roundButton8.FlatAppearance.BorderSize = 0;
-            this.roundButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton8.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton8.ForeColor = System.Drawing.Color.Black;
-            this.roundButton8.Location = new System.Drawing.Point(232, 208);
-            this.roundButton8.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton8.Name = "roundButton8";
-            this.roundButton8.Size = new System.Drawing.Size(168, 168);
-            this.roundButton8.TabIndex = 26;
-            this.roundButton8.Text = "Наименование блюда";
-            this.roundButton8.TextColor = System.Drawing.Color.Black;
-            this.roundButton8.UseVisualStyleBackColor = false;
-            // 
-            // roundButton9
-            // 
-            this.roundButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton9.BorderRadius = 20;
-            this.roundButton9.BorderSize = 0;
-            this.roundButton9.FlatAppearance.BorderSize = 0;
-            this.roundButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton9.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton9.ForeColor = System.Drawing.Color.Black;
-            this.roundButton9.Location = new System.Drawing.Point(436, 208);
-            this.roundButton9.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton9.Name = "roundButton9";
-            this.roundButton9.Size = new System.Drawing.Size(168, 168);
-            this.roundButton9.TabIndex = 27;
-            this.roundButton9.Text = "Наименование блюда";
-            this.roundButton9.TextColor = System.Drawing.Color.Black;
-            this.roundButton9.UseVisualStyleBackColor = false;
-            // 
-            // roundButton10
-            // 
-            this.roundButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton10.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton10.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton10.BorderRadius = 20;
-            this.roundButton10.BorderSize = 0;
-            this.roundButton10.FlatAppearance.BorderSize = 0;
-            this.roundButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton10.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton10.ForeColor = System.Drawing.Color.Black;
-            this.roundButton10.Location = new System.Drawing.Point(640, 208);
-            this.roundButton10.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton10.Name = "roundButton10";
-            this.roundButton10.Size = new System.Drawing.Size(168, 168);
-            this.roundButton10.TabIndex = 28;
-            this.roundButton10.Text = "Наименование блюда";
-            this.roundButton10.TextColor = System.Drawing.Color.Black;
-            this.roundButton10.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.menuFlowLayoutPanel);
+            this.panel1.Controls.Add(this.блюдаDataGridView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(414, 0);
+            this.panel1.Location = new System.Drawing.Point(58, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 681);
+            this.panel1.Size = new System.Drawing.Size(1206, 681);
             this.panel1.TabIndex = 3;
+            // 
+            // databaseCafeDataSet
+            // 
+            this.databaseCafeDataSet.DataSetName = "databaseCafeDataSet";
+            this.databaseCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // блюдаBindingSource
+            // 
+            this.блюдаBindingSource.DataMember = "Блюда";
+            this.блюдаBindingSource.DataSource = this.databaseCafeDataSet;
+            // 
+            // блюдаTableAdapter
+            // 
+            this.блюдаTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.БлюдаTableAdapter = this.блюдаTableAdapter;
+            this.tableAdapterManager.ЗаказыTableAdapter = null;
+            this.tableAdapterManager.ИнгредиентыTableAdapter = null;
+            this.tableAdapterManager.ПользователиTableAdapter = null;
+            this.tableAdapterManager.Состав_блюдаTableAdapter = null;
+            this.tableAdapterManager.Состав_заказаTableAdapter = null;
+            this.tableAdapterManager.СотрудникиTableAdapter = null;
+            // 
+            // блюдаBindingNavigator
+            // 
+            this.блюдаBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.блюдаBindingNavigator.BindingSource = this.блюдаBindingSource;
+            this.блюдаBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.блюдаBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.блюдаBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.блюдаBindingNavigatorSaveItem});
+            this.блюдаBindingNavigator.Location = new System.Drawing.Point(58, 0);
+            this.блюдаBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.блюдаBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.блюдаBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.блюдаBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.блюдаBindingNavigator.Name = "блюдаBindingNavigator";
+            this.блюдаBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.блюдаBindingNavigator.Size = new System.Drawing.Size(1206, 25);
+            this.блюдаBindingNavigator.TabIndex = 4;
+            this.блюдаBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 15);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // блюдаBindingNavigatorSaveItem
+            // 
+            this.блюдаBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.блюдаBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("блюдаBindingNavigatorSaveItem.Image")));
+            this.блюдаBindingNavigatorSaveItem.Name = "блюдаBindingNavigatorSaveItem";
+            this.блюдаBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.блюдаBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.блюдаBindingNavigatorSaveItem.Click += new System.EventHandler(this.блюдаBindingNavigatorSaveItem_Click);
+            // 
+            // блюдаDataGridView
+            // 
+            this.блюдаDataGridView.AutoGenerateColumns = false;
+            this.блюдаDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.блюдаDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewImageColumn1});
+            this.блюдаDataGridView.DataSource = this.блюдаBindingSource;
+            this.блюдаDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.блюдаDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.блюдаDataGridView.Name = "блюдаDataGridView";
+            this.блюдаDataGridView.Size = new System.Drawing.Size(1206, 653);
+            this.блюдаDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "dish_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "dish_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "dish_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "dish_name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn3.HeaderText = "description";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn4.HeaderText = "price";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "mass";
+            this.dataGridViewTextBoxColumn5.HeaderText = "mass";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "unit_of_measure";
+            this.dataGridViewTextBoxColumn6.HeaderText = "unit_of_measure";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "image";
+            this.dataGridViewImageColumn1.HeaderText = "image";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // MenuEditor
             // 
@@ -407,43 +352,59 @@ namespace ISFCprotopype
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.блюдаBindingNavigator);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ReceiptWrap);
             this.Controls.Add(this.BarPanel);
             this.Name = "MenuEditor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Склад ингредиентов";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuEditor_FormClosing);
+            this.Load += new System.EventHandler(this.MenuEditor_Load);
             this.BarPanel.ResumeLayout(false);
-            this.ReceiptWrap.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuFlowLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаBindingNavigator)).EndInit();
+            this.блюдаBindingNavigator.ResumeLayout(false);
+            this.блюдаBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.блюдаDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel BarPanel;
-        private System.Windows.Forms.Panel ReceiptWrap;
-        private System.Windows.Forms.FlowLayoutPanel menuFlowLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label amountLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel orderList;
-        private CustomElements.RoundButton addIngredientsButton;
         private CustomElements.RoundButton listButton;
         private CustomElements.RoundButton exitButton;
         private System.Windows.Forms.Panel panel1;
-        private CustomElements.RoundButton roundButton1;
-        private CustomElements.RoundButton roundButton2;
-        private CustomElements.RoundButton roundButton3;
-        private CustomElements.RoundButton roundButton6;
-        private CustomElements.RoundButton roundButton7;
-        private CustomElements.RoundButton roundButton8;
-        private CustomElements.RoundButton roundButton9;
-        private CustomElements.RoundButton roundButton10;
+        private databaseCafeDataSet databaseCafeDataSet;
+        private System.Windows.Forms.BindingSource блюдаBindingSource;
+        private databaseCafeDataSetTableAdapters.БлюдаTableAdapter блюдаTableAdapter;
+        private databaseCafeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator блюдаBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton блюдаBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView блюдаDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
 

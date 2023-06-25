@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ISFCprotopype.CustomElements;
+using ISFCprotopype.Windows.DialogWindows;
 
 namespace ISFCprotopype
 {
@@ -22,71 +24,11 @@ namespace ISFCprotopype
         {
             InitializeComponent();
             SetBGColor();
-            ReceiptItem[] receiptItem;
-            receiptItem = new ReceiptItem[3];
-            for (int i = 0; i < receiptItem.Length; i++)
-            {
-                receiptItem[i] = new ReceiptItem();
-                orderList.Controls.Add(receiptItem[i]);
-            }
-            UpdateAmountLabel();
-            foreach (RoundButton button in menuFlowLayoutPanel.Controls)
-            {
-                button.Click += (s, e) =>
-                {
-                    orderList.Controls.Add(new ReceiptItem());
-                };
-            }
         }
 
         private void SetBGColor()
         {
             BarPanel.BackColor = violet;
-            ReceiptWrap.BackColor = greyWhite;
-            addIngredientsButton.BackgroundColor = violet;
-        }
-
-        private void receiptItem1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        public void UpdateAmountLabel()
-        {
-            float amountCost = 0;
-
-            foreach (ReceiptItem item in orderList.Controls)
-            {
-                amountCost += item.AmountCost;
-            }
-
-            amountLabel.Text = string.Format("{0} ₽", amountCost);
-
-            if (amountCost == 0)
-            {
-                addIngredientsButton.Enabled = false;
-            }
-            else
-            {
-                addIngredientsButton.Enabled = true;
-            }
-        }
-
-        private void orderList_ControlAdded(object sender, ControlEventArgs e)
-        {
-            foreach (ReceiptItem item in orderList.Controls)
-            {
-                item.AmountValueChanged += (s, eventA) =>
-                {
-                    UpdateAmountLabel();
-                };
-            }
-
-            UpdateAmountLabel();
-        }
-
-        private void orderList_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            UpdateAmountLabel();
         }
 
         private void orderButton_EnabledChanged(object sender, EventArgs e)
@@ -105,6 +47,101 @@ namespace ISFCprotopype
                 button.ForeColor = Color.White;
                 button.BorderSize = 0;
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void amountLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = AutorizeForExit(e);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private bool AutorizeForExit(FormClosingEventArgs e)
+        {
+            AutorizeWindow autorizeWindow = new AutorizeWindow();
+            autorizeWindow.headlineLabel.Text = "Сменить режим?";
+            autorizeWindow.descriptionLabel.Text = "Для смены режима требуется пароль администратора";
+            autorizeWindow.autorizeButton.Text = "Выход";
+
+            /// Статус авторизации
+            // Значение равно -1: выход из режима
+            // Значение равно 1: отмена выхода из режима
+            int autorizeStatus = 0;
+
+            while (autorizeStatus == 0)
+            {
+                DialogResult result = autorizeWindow.ShowDialog();
+                if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts == "admin")
+                {
+                    autorizeStatus = -1;
+                    e.Cancel = false;
+                    return e.Cancel;
+                }
+                else if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts == "")
+                {
+                    SystemSounds.Exclamation.Play();
+
+                    autorizeWindow.passwordTextBox.PlaceholderText = "Введите пароль";
+                    autorizeWindow.passwordTextBox.PlaceholderColor = Color.FromArgb(240, 122, 117);
+                    autorizeWindow.passwordTextBox.BorderColor = Color.FromArgb(240, 122, 117);
+                }
+                else if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts != "" && autorizeWindow.passwordTextBox.Texts != "admin")
+                {
+                    SystemSounds.Exclamation.Play();
+
+                    autorizeWindow.passwordTextBox.PlaceholderText = "Неверный пароль";
+                    autorizeWindow.passwordTextBox.PlaceholderColor = Color.FromArgb(240, 122, 117);
+                    autorizeWindow.passwordTextBox.BorderColor = Color.FromArgb(240, 122, 117);
+                }
+                else
+                {
+                    autorizeStatus = 1;
+                    e.Cancel = true;
+                    return e.Cancel;
+                }
+            }
+
+            if (autorizeStatus == -1)
+            {
+                e.Cancel = false;
+                return e.Cancel;
+            }
+            else
+            {
+                autorizeStatus = 1;
+                e.Cancel = true;
+                return e.Cancel;
+            }
+        }
+
+        private void MenuEditor_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseCafeDataSet.Блюда". При необходимости она может быть перемещена или удалена.
+            this.блюдаTableAdapter.Fill(this.databaseCafeDataSet.Блюда);
+
+        }
+
+        private void блюдаBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.блюдаBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseCafeDataSet);
+
         }
     }
 }

@@ -79,6 +79,9 @@
     <Compile Include="CustomElements\CashRegister\ReceiptItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomElements\FinancialAccounting\FinancialAccountingListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CustomElements\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -88,10 +91,16 @@
     <Compile Include="CustomElements\RoundPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomElements\RoundTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="databaseCafeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DialogWindows\CashRegisterWindow\CashRegisterAutorizeWindow.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\DialogWindows\AutorizeWindow.cs">
       <SubType>Form</SubType>
@@ -137,8 +146,17 @@
     <EmbeddedResource Include="CustomElements\CashRegister\MenuListItem.resx">
       <DependentUpon>MenuListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomElements\FinancialAccounting\FinancialAccountingListItem.resx">
+      <DependentUpon>FinancialAccountingListItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomElements\RoundNumericUpDown.resx">
       <DependentUpon>RoundNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomElements\RoundTextBox.resx">
+      <DependentUpon>RoundTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\DialogWindows\CashRegisterWindow\CashRegisterAutorizeWindow.resx">
+      <DependentUpon>CashRegisterAutorizeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DialogWindows\AutorizeWindow.resx">
       <DependentUpon>AutorizeWindow.cs</DependentUpon>

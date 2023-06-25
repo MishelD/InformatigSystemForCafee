@@ -29,39 +29,47 @@ namespace ISFCprotopype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientWarehouseWindow));
             this.BarPanel = new System.Windows.Forms.Panel();
-            this.roundButton5 = new ISFCprotopype.CustomElements.RoundButton();
-            this.addButton = new ISFCprotopype.CustomElements.RoundButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.databaseCafeDataSet = new ISFCprotopype.databaseCafeDataSet();
+            this.ингредиентыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ингредиентыTableAdapter = new ISFCprotopype.databaseCafeDataSetTableAdapters.ИнгредиентыTableAdapter();
+            this.tableAdapterManager = new ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager();
+            this.ингредиентыBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.ингредиентыBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.ингредиентыDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
             this.listButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.ReceiptWrap = new System.Windows.Forms.Panel();
-            this.addIngredientsButton = new ISFCprotopype.CustomElements.RoundButton();
-            this.orderList = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.amountLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.menuFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundButton1 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton2 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton3 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton6 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton7 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton8 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton9 = new ISFCprotopype.CustomElements.RoundButton();
-            this.roundButton10 = new ISFCprotopype.CustomElements.RoundButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.BarPanel.SuspendLayout();
-            this.ReceiptWrap.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.menuFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыBindingNavigator)).BeginInit();
+            this.ингредиентыBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // BarPanel
             // 
             this.BarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.BarPanel.Controls.Add(this.roundButton5);
-            this.BarPanel.Controls.Add(this.addButton);
             this.BarPanel.Controls.Add(this.exitButton);
             this.BarPanel.Controls.Add(this.listButton);
             this.BarPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,45 +80,213 @@ namespace ISFCprotopype
             this.BarPanel.Size = new System.Drawing.Size(58, 681);
             this.BarPanel.TabIndex = 0;
             // 
-            // roundButton5
+            // panel1
             // 
-            this.roundButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.roundButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.roundButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.roundButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton5.BorderRadius = 10;
-            this.roundButton5.BorderSize = 0;
-            this.roundButton5.FlatAppearance.BorderSize = 0;
-            this.roundButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton5.ForeColor = System.Drawing.Color.White;
-            this.roundButton5.Image = global::ISFCprotopype.Properties.Resources.minusLightSmall;
-            this.roundButton5.Location = new System.Drawing.Point(9, 124);
-            this.roundButton5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
-            this.roundButton5.Name = "roundButton5";
-            this.roundButton5.Size = new System.Drawing.Size(40, 40);
-            this.roundButton5.TabIndex = 6;
-            this.roundButton5.TextColor = System.Drawing.Color.White;
-            this.roundButton5.UseVisualStyleBackColor = false;
+            this.panel1.Controls.Add(this.ингредиентыDataGridView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(58, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1206, 681);
+            this.panel1.TabIndex = 3;
             // 
-            // addButton
+            // databaseCafeDataSet
             // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.addButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.addButton.BorderRadius = 10;
-            this.addButton.BorderSize = 0;
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Image = global::ISFCprotopype.Properties.Resources.plusLightSmall;
-            this.addButton.Location = new System.Drawing.Point(9, 67);
-            this.addButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(40, 40);
-            this.addButton.TabIndex = 5;
-            this.addButton.TextColor = System.Drawing.Color.White;
-            this.addButton.UseVisualStyleBackColor = false;
+            this.databaseCafeDataSet.DataSetName = "databaseCafeDataSet";
+            this.databaseCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ингредиентыBindingSource
+            // 
+            this.ингредиентыBindingSource.DataMember = "Ингредиенты";
+            this.ингредиентыBindingSource.DataSource = this.databaseCafeDataSet;
+            // 
+            // ингредиентыTableAdapter
+            // 
+            this.ингредиентыTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = ISFCprotopype.databaseCafeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.БлюдаTableAdapter = null;
+            this.tableAdapterManager.ЗаказыTableAdapter = null;
+            this.tableAdapterManager.ИнгредиентыTableAdapter = this.ингредиентыTableAdapter;
+            this.tableAdapterManager.ПользователиTableAdapter = null;
+            this.tableAdapterManager.Состав_блюдаTableAdapter = null;
+            this.tableAdapterManager.Состав_заказаTableAdapter = null;
+            this.tableAdapterManager.СотрудникиTableAdapter = null;
+            // 
+            // ингредиентыBindingNavigator
+            // 
+            this.ингредиентыBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.ингредиентыBindingNavigator.BindingSource = this.ингредиентыBindingSource;
+            this.ингредиентыBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.ингредиентыBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.ингредиентыBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.ингредиентыBindingNavigatorSaveItem});
+            this.ингредиентыBindingNavigator.Location = new System.Drawing.Point(58, 0);
+            this.ингредиентыBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.ингредиентыBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.ингредиентыBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.ингредиентыBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.ингредиентыBindingNavigator.Name = "ингредиентыBindingNavigator";
+            this.ингредиентыBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.ингредиентыBindingNavigator.Size = new System.Drawing.Size(1206, 25);
+            this.ингредиентыBindingNavigator.TabIndex = 4;
+            this.ингредиентыBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // ингредиентыBindingNavigatorSaveItem
+            // 
+            this.ингредиентыBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ингредиентыBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ингредиентыBindingNavigatorSaveItem.Image")));
+            this.ингредиентыBindingNavigatorSaveItem.Name = "ингредиентыBindingNavigatorSaveItem";
+            this.ингредиентыBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.ингредиентыBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.ингредиентыBindingNavigatorSaveItem.Click += new System.EventHandler(this.ингредиентыBindingNavigatorSaveItem_Click);
+            // 
+            // ингредиентыDataGridView
+            // 
+            this.ингредиентыDataGridView.AutoGenerateColumns = false;
+            this.ингредиентыDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ингредиентыDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewImageColumn1});
+            this.ингредиентыDataGridView.DataSource = this.ингредиентыBindingSource;
+            this.ингредиентыDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ингредиентыDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.ингредиентыDataGridView.Name = "ингредиентыDataGridView";
+            this.ингредиентыDataGridView.Size = new System.Drawing.Size(1206, 653);
+            this.ингредиентыDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ingredient_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ingredient_id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ingredient_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ingredient_name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "unit_of_measure";
+            this.dataGridViewTextBoxColumn3.HeaderText = "unit_of_measure";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "quantity_in_stock";
+            this.dataGridViewTextBoxColumn4.HeaderText = "quantity_in_stock";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "image";
+            this.dataGridViewImageColumn1.HeaderText = "image";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // exitButton
             // 
@@ -133,6 +309,7 @@ namespace ISFCprotopype
             this.exitButton.TabIndex = 4;
             this.exitButton.TextColor = System.Drawing.Color.White;
             this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // listButton
             // 
@@ -154,342 +331,63 @@ namespace ISFCprotopype
             this.listButton.TextColor = System.Drawing.Color.White;
             this.listButton.UseVisualStyleBackColor = false;
             // 
-            // ReceiptWrap
-            // 
-            this.ReceiptWrap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ReceiptWrap.Controls.Add(this.addIngredientsButton);
-            this.ReceiptWrap.Controls.Add(this.orderList);
-            this.ReceiptWrap.Controls.Add(this.tableLayoutPanel1);
-            this.ReceiptWrap.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ReceiptWrap.Location = new System.Drawing.Point(58, 0);
-            this.ReceiptWrap.Margin = new System.Windows.Forms.Padding(0);
-            this.ReceiptWrap.Name = "ReceiptWrap";
-            this.ReceiptWrap.Size = new System.Drawing.Size(356, 681);
-            this.ReceiptWrap.TabIndex = 1;
-            this.ReceiptWrap.Visible = false;
-            // 
-            // addIngredientsButton
-            // 
-            this.addIngredientsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addIngredientsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addIngredientsButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addIngredientsButton.BorderColor = System.Drawing.Color.Transparent;
-            this.addIngredientsButton.BorderRadius = 22;
-            this.addIngredientsButton.BorderSize = 0;
-            this.addIngredientsButton.FlatAppearance.BorderSize = 0;
-            this.addIngredientsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addIngredientsButton.Font = new System.Drawing.Font("Inter", 16.56443F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addIngredientsButton.ForeColor = System.Drawing.Color.White;
-            this.addIngredientsButton.Location = new System.Drawing.Point(9, 624);
-            this.addIngredientsButton.Margin = new System.Windows.Forms.Padding(10);
-            this.addIngredientsButton.Name = "addIngredientsButton";
-            this.addIngredientsButton.Size = new System.Drawing.Size(337, 47);
-            this.addIngredientsButton.TabIndex = 0;
-            this.addIngredientsButton.Text = "Добавить";
-            this.addIngredientsButton.TextColor = System.Drawing.Color.White;
-            this.addIngredientsButton.UseVisualStyleBackColor = false;
-            this.addIngredientsButton.EnabledChanged += new System.EventHandler(this.orderButton_EnabledChanged);
-            // 
-            // orderList
-            // 
-            this.orderList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderList.AutoScroll = true;
-            this.orderList.BackColor = System.Drawing.Color.Transparent;
-            this.orderList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.orderList.Location = new System.Drawing.Point(9, 10);
-            this.orderList.Margin = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.orderList.Name = "orderList";
-            this.orderList.Size = new System.Drawing.Size(337, 536);
-            this.orderList.TabIndex = 2;
-            this.orderList.WrapContents = false;
-            this.orderList.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlAdded);
-            this.orderList.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.orderList_ControlRemoved);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.59544F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.40456F));
-            this.tableLayoutPanel1.Controls.Add(this.amountLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 570);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(356, 44);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // amountLabel
-            // 
-            this.amountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.amountLabel.BackColor = System.Drawing.Color.Transparent;
-            this.amountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.amountLabel.Location = new System.Drawing.Point(151, 0);
-            this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(202, 44);
-            this.amountLabel.TabIndex = 1;
-            this.amountLabel.Text = "0 ₽";
-            this.amountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.10543F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Итого:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuFlowLayoutPanel
-            // 
-            this.menuFlowLayoutPanel.AutoScroll = true;
-            this.menuFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.menuFlowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton1);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton2);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton3);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton6);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton7);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton8);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton9);
-            this.menuFlowLayoutPanel.Controls.Add(this.roundButton10);
-            this.menuFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.menuFlowLayoutPanel.Name = "menuFlowLayoutPanel";
-            this.menuFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.menuFlowLayoutPanel.Size = new System.Drawing.Size(850, 681);
-            this.menuFlowLayoutPanel.TabIndex = 2;
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton1.BorderRadius = 20;
-            this.roundButton1.BorderSize = 0;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton1.ForeColor = System.Drawing.Color.Black;
-            this.roundButton1.Location = new System.Drawing.Point(28, 20);
-            this.roundButton1.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(168, 168);
-            this.roundButton1.TabIndex = 21;
-            this.roundButton1.Text = "Наименование ингредиента";
-            this.roundButton1.TextColor = System.Drawing.Color.Black;
-            this.roundButton1.UseVisualStyleBackColor = false;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton2.BorderRadius = 20;
-            this.roundButton2.BorderSize = 0;
-            this.roundButton2.FlatAppearance.BorderSize = 0;
-            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton2.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton2.ForeColor = System.Drawing.Color.Black;
-            this.roundButton2.Location = new System.Drawing.Point(232, 20);
-            this.roundButton2.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(168, 168);
-            this.roundButton2.TabIndex = 22;
-            this.roundButton2.Text = "Наименование ингредиента";
-            this.roundButton2.TextColor = System.Drawing.Color.Black;
-            this.roundButton2.UseVisualStyleBackColor = false;
-            // 
-            // roundButton3
-            // 
-            this.roundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton3.BorderRadius = 20;
-            this.roundButton3.BorderSize = 0;
-            this.roundButton3.FlatAppearance.BorderSize = 0;
-            this.roundButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton3.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton3.ForeColor = System.Drawing.Color.Black;
-            this.roundButton3.Location = new System.Drawing.Point(436, 20);
-            this.roundButton3.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(168, 168);
-            this.roundButton3.TabIndex = 23;
-            this.roundButton3.Text = "Наименование ингредиента";
-            this.roundButton3.TextColor = System.Drawing.Color.Black;
-            this.roundButton3.UseVisualStyleBackColor = false;
-            // 
-            // roundButton6
-            // 
-            this.roundButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton6.BorderRadius = 20;
-            this.roundButton6.BorderSize = 0;
-            this.roundButton6.FlatAppearance.BorderSize = 0;
-            this.roundButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton6.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton6.ForeColor = System.Drawing.Color.Black;
-            this.roundButton6.Location = new System.Drawing.Point(640, 20);
-            this.roundButton6.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton6.Name = "roundButton6";
-            this.roundButton6.Size = new System.Drawing.Size(168, 168);
-            this.roundButton6.TabIndex = 24;
-            this.roundButton6.Text = "Наименование ингредиента";
-            this.roundButton6.TextColor = System.Drawing.Color.Black;
-            this.roundButton6.UseVisualStyleBackColor = false;
-            // 
-            // roundButton7
-            // 
-            this.roundButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton7.BorderRadius = 20;
-            this.roundButton7.BorderSize = 0;
-            this.roundButton7.FlatAppearance.BorderSize = 0;
-            this.roundButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton7.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton7.ForeColor = System.Drawing.Color.Black;
-            this.roundButton7.Location = new System.Drawing.Point(28, 208);
-            this.roundButton7.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton7.Name = "roundButton7";
-            this.roundButton7.Size = new System.Drawing.Size(168, 168);
-            this.roundButton7.TabIndex = 25;
-            this.roundButton7.Text = "Наименование ингредиента";
-            this.roundButton7.TextColor = System.Drawing.Color.Black;
-            this.roundButton7.UseVisualStyleBackColor = false;
-            // 
-            // roundButton8
-            // 
-            this.roundButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton8.BorderRadius = 20;
-            this.roundButton8.BorderSize = 0;
-            this.roundButton8.FlatAppearance.BorderSize = 0;
-            this.roundButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton8.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton8.ForeColor = System.Drawing.Color.Black;
-            this.roundButton8.Location = new System.Drawing.Point(232, 208);
-            this.roundButton8.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton8.Name = "roundButton8";
-            this.roundButton8.Size = new System.Drawing.Size(168, 168);
-            this.roundButton8.TabIndex = 26;
-            this.roundButton8.Text = "Наименование ингредиента";
-            this.roundButton8.TextColor = System.Drawing.Color.Black;
-            this.roundButton8.UseVisualStyleBackColor = false;
-            // 
-            // roundButton9
-            // 
-            this.roundButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton9.BorderRadius = 20;
-            this.roundButton9.BorderSize = 0;
-            this.roundButton9.FlatAppearance.BorderSize = 0;
-            this.roundButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton9.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton9.ForeColor = System.Drawing.Color.Black;
-            this.roundButton9.Location = new System.Drawing.Point(436, 208);
-            this.roundButton9.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton9.Name = "roundButton9";
-            this.roundButton9.Size = new System.Drawing.Size(168, 168);
-            this.roundButton9.TabIndex = 27;
-            this.roundButton9.Text = "Наименование ингредиента";
-            this.roundButton9.TextColor = System.Drawing.Color.Black;
-            this.roundButton9.UseVisualStyleBackColor = false;
-            // 
-            // roundButton10
-            // 
-            this.roundButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton10.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.roundButton10.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton10.BorderRadius = 20;
-            this.roundButton10.BorderSize = 0;
-            this.roundButton10.FlatAppearance.BorderSize = 0;
-            this.roundButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton10.Font = new System.Drawing.Font("Inter", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.roundButton10.ForeColor = System.Drawing.Color.Black;
-            this.roundButton10.Location = new System.Drawing.Point(640, 208);
-            this.roundButton10.Margin = new System.Windows.Forms.Padding(18, 10, 18, 10);
-            this.roundButton10.Name = "roundButton10";
-            this.roundButton10.Size = new System.Drawing.Size(168, 168);
-            this.roundButton10.TabIndex = 28;
-            this.roundButton10.Text = "Наименование ингредиента";
-            this.roundButton10.TextColor = System.Drawing.Color.Black;
-            this.roundButton10.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.menuFlowLayoutPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(414, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 681);
-            this.panel1.TabIndex = 3;
-            // 
-            // IngredientWarehouse
+            // IngredientWarehouseWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.ингредиентыBindingNavigator);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ReceiptWrap);
             this.Controls.Add(this.BarPanel);
-            this.Name = "IngredientWarehouse";
+            this.Name = "IngredientWarehouseWindow";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Склад ингредиентов";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IngredientWarehouseWindow_FormClosing);
+            this.Load += new System.EventHandler(this.IngredientWarehouseWindow_Load);
             this.BarPanel.ResumeLayout(false);
-            this.ReceiptWrap.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuFlowLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.databaseCafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыBindingNavigator)).EndInit();
+            this.ингредиентыBindingNavigator.ResumeLayout(false);
+            this.ингредиентыBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ингредиентыDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel BarPanel;
-        private System.Windows.Forms.Panel ReceiptWrap;
-        private System.Windows.Forms.FlowLayoutPanel menuFlowLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label amountLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel orderList;
-        private CustomElements.RoundButton addIngredientsButton;
         private CustomElements.RoundButton listButton;
         private CustomElements.RoundButton exitButton;
         private System.Windows.Forms.Panel panel1;
-        private CustomElements.RoundButton roundButton1;
-        private CustomElements.RoundButton roundButton2;
-        private CustomElements.RoundButton roundButton3;
-        private CustomElements.RoundButton roundButton5;
-        private CustomElements.RoundButton addButton;
-        private CustomElements.RoundButton roundButton6;
-        private CustomElements.RoundButton roundButton7;
-        private CustomElements.RoundButton roundButton8;
-        private CustomElements.RoundButton roundButton9;
-        private CustomElements.RoundButton roundButton10;
+        private databaseCafeDataSet databaseCafeDataSet;
+        private System.Windows.Forms.BindingSource ингредиентыBindingSource;
+        private databaseCafeDataSetTableAdapters.ИнгредиентыTableAdapter ингредиентыTableAdapter;
+        private databaseCafeDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator ингредиентыBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton ингредиентыBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView ингредиентыDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
 

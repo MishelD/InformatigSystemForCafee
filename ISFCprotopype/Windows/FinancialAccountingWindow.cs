@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ISFCprotopype.CustomElements;
+using ISFCprotopype.CustomElements.FinancialAccounting;
+using ISFCprotopype.Windows.DialogWindows;
 
 namespace ISFCprotopype
 {
@@ -22,89 +25,136 @@ namespace ISFCprotopype
         {
             InitializeComponent();
             SetBGColor();
-            ReceiptItem[] receiptItem;
-            receiptItem = new ReceiptItem[3];
-            for (int i = 0; i < receiptItem.Length; i++)
-            {
-                receiptItem[i] = new ReceiptItem();
-                orderList.Controls.Add(receiptItem[i]);
-            }
-            UpdateAmountLabel();
-            foreach (RoundButton button in menuFlowLayoutPanel.Controls)
-            {
-                button.Click += (s, e) =>
-                {
-                    orderList.Controls.Add(new ReceiptItem());
-                };
-            }
+            
         }
 
         private void SetBGColor()
         {
             BarPanel.BackColor = violet;
-            ReceiptWrap.BackColor = greyWhite;
-            addIngredientsButton.BackgroundColor = violet;
+        }      
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void receiptItem1_Paint(object sender, PaintEventArgs e)
+        private void FinancialAccountingWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-        public void UpdateAmountLabel()
-        {
-            float amountCost = 0;
-
-            foreach (ReceiptItem item in orderList.Controls)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                amountCost += item.AmountCost;
-            }
-
-            amountLabel.Text = string.Format("{0} ₽", amountCost);
-
-            if (amountCost == 0)
-            {
-                addIngredientsButton.Enabled = false;
+                e.Cancel = AutorizeForExit(e);
             }
             else
             {
-                addIngredientsButton.Enabled = true;
+                e.Cancel = true;
             }
         }
-
-        private void orderList_ControlAdded(object sender, ControlEventArgs e)
+        private bool AutorizeForExit(FormClosingEventArgs e)
         {
-            foreach (ReceiptItem item in orderList.Controls)
+            AutorizeWindow autorizeWindow = new AutorizeWindow();
+            autorizeWindow.headlineLabel.Text = "Сменить режим?";
+            autorizeWindow.descriptionLabel.Text = "Для смены режима требуется пароль администратора";
+            autorizeWindow.autorizeButton.Text = "Выход";
+
+            /// Статус авторизации
+            // Значение равно -1: выход из режима
+            // Значение равно 1: отмена выхода из режима
+            int autorizeStatus = 0;
+
+            while (autorizeStatus == 0)
             {
-                item.AmountValueChanged += (s, eventA) =>
+                DialogResult result = autorizeWindow.ShowDialog();
+                if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts == "admin")
                 {
-                    UpdateAmountLabel();
-                };
+                    autorizeStatus = -1;
+                    e.Cancel = false;
+                    return e.Cancel;
+                }
+                else if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts == "")
+                {
+                    SystemSounds.Exclamation.Play();
+
+                    autorizeWindow.passwordTextBox.PlaceholderText = "Введите пароль";
+                    autorizeWindow.passwordTextBox.PlaceholderColor = Color.FromArgb(240, 122, 117);
+                    autorizeWindow.passwordTextBox.BorderColor = Color.FromArgb(240, 122, 117);
+                }
+                else if (result == DialogResult.OK && autorizeWindow.passwordTextBox.Texts != "" && autorizeWindow.passwordTextBox.Texts != "admin")
+                {
+                    SystemSounds.Exclamation.Play();
+
+                    autorizeWindow.passwordTextBox.PlaceholderText = "Неверный пароль";
+                    autorizeWindow.passwordTextBox.PlaceholderColor = Color.FromArgb(240, 122, 117);
+                    autorizeWindow.passwordTextBox.BorderColor = Color.FromArgb(240, 122, 117);
+                }
+                else
+                {
+                    autorizeStatus = 1;
+                    e.Cancel = true;
+                    return e.Cancel;
+                }
             }
 
-            UpdateAmountLabel();
-        }
-
-        private void orderList_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            UpdateAmountLabel();
-        }
-
-        private void orderButton_EnabledChanged(object sender, EventArgs e)
-        {
-            RoundButton button = (RoundButton)sender;
-            if (!button.Enabled)
+            if (autorizeStatus == -1)
             {
-                button.BackgroundColor = greyWhite;
-                button.ForeColor = Color.Gray;
-                button.BorderSize = 1;
-                button.BorderColor = Color.Gray;
+                e.Cancel = false;
+                return e.Cancel;
             }
             else
             {
-                button.BackgroundColor = violet;
-                button.ForeColor = Color.White;
-                button.BorderSize = 0;
+                autorizeStatus = 1;
+                e.Cancel = true;
+                return e.Cancel;
             }
+        }
+
+        private void заказыBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.заказыBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseCafeDataSet);
+
+        }
+
+        private void FinancialAccountingWindow_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseCafeDataSet.Заказы". При необходимости она может быть перемещена или удалена.
+            this.заказыTableAdapter.Fill(this.databaseCafeDataSet.Заказы);
+
+            foreach (DataRow row in databaseCafeDataSet.Заказы.Rows)
+            {
+                FinancialAccountingListItem listItem = new FinancialAccountingListItem();
+                listItem.totalAmountLabel.Text = string.Format("+ {0} ₽", row["total_amount"]);
+                listItem.totalAmountNameLabel.Text = string.Format("Произведена оплата заказа #{0}", row["order_id"]);
+                financeFlowLayoutPanel.Controls.Add(listItem);
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        string printText;
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            printText = "";
+            foreach (DataRow row in databaseCafeDataSet.Заказы.Rows)
+            {
+                string stroke = "";
+
+                foreach (DataColumn column in databaseCafeDataSet.Заказы.Columns)
+                {
+                    stroke += string.Format("| {0}: {1} | ", column.ColumnName, row[column]);
+                }
+
+                printText += string.Format("{0}\n", stroke);
+            }
+
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(printText, DefaultFont, Brushes.Black, 20, 20);
         }
     }
 }

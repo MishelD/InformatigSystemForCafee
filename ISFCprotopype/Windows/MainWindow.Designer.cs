@@ -135,13 +135,12 @@
             // 
             // ingredientWarehouseButton
             // 
-            this.ingredientWarehouseButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ingredientWarehouseButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.ingredientWarehouseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.ingredientWarehouseButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
             this.ingredientWarehouseButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.ingredientWarehouseButton.BorderRadius = 39;
             this.ingredientWarehouseButton.BorderSize = 0;
             this.ingredientWarehouseButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ingredientWarehouseButton.Enabled = false;
             this.ingredientWarehouseButton.FlatAppearance.BorderSize = 0;
             this.ingredientWarehouseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingredientWarehouseButton.Font = new System.Drawing.Font("Inter Medium", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -159,8 +158,8 @@
             // 
             // cashRegisterButton
             // 
-            this.cashRegisterButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.cashRegisterButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.cashRegisterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.cashRegisterButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
             this.cashRegisterButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.cashRegisterButton.BorderRadius = 39;
             this.cashRegisterButton.BorderSize = 0;
@@ -199,13 +198,12 @@
             // 
             // financialAccountingButton
             // 
-            this.financialAccountingButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.financialAccountingButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.financialAccountingButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.financialAccountingButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
             this.financialAccountingButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.financialAccountingButton.BorderRadius = 39;
             this.financialAccountingButton.BorderSize = 0;
             this.financialAccountingButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.financialAccountingButton.Enabled = false;
             this.financialAccountingButton.FlatAppearance.BorderSize = 0;
             this.financialAccountingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.financialAccountingButton.Font = new System.Drawing.Font("Inter Medium", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -223,13 +221,12 @@
             // 
             // menuButton
             // 
-            this.menuButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.menuButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.menuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.menuButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
             this.menuButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.menuButton.BorderRadius = 39;
             this.menuButton.BorderSize = 0;
             this.menuButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuButton.Enabled = false;
             this.menuButton.FlatAppearance.BorderSize = 0;
             this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuButton.Font = new System.Drawing.Font("Inter Medium", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -259,8 +256,8 @@
             // 
             this.peopleManagementButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.peopleManagementButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.peopleManagementButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.peopleManagementButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
+            this.peopleManagementButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
             this.peopleManagementButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.peopleManagementButton.BorderRadius = 39;
             this.peopleManagementButton.BorderSize = 0;
@@ -278,6 +275,7 @@
             this.peopleManagementButton.Text = "Управление персоналом";
             this.peopleManagementButton.TextColor = System.Drawing.Color.White;
             this.peopleManagementButton.UseVisualStyleBackColor = false;
+            this.peopleManagementButton.Visible = false;
             this.peopleManagementButton.Click += new System.EventHandler(this.peopleManagementButton_Click);
             // 
             // MainWindow
@@ -292,6 +290,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -18,7 +18,7 @@ namespace ISFCprotopype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutorizeWindow());
+            Application.Run(new MainWindow());
         }
     }
 }
