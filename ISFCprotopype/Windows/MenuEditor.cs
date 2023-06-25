@@ -11,14 +11,14 @@ using ISFCprotopype.CustomElements;
 
 namespace ISFCprotopype
 {
-    public partial class IngredientWarehouse : Form
+    public partial class MenuEditor : Form
     {
         private Color darkViolet = Color.FromArgb(73, 62, 194);
         private Color violet = Color.FromArgb(93, 95, 239);
         private Color lightViolet = Color.FromArgb(120, 121, 241);
         private Color greyWhite = Color.FromArgb(238, 238, 238);
 
-        public IngredientWarehouse()
+        public MenuEditor()
         {
             InitializeComponent();
             SetBGColor();

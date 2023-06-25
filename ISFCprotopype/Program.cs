@@ -1,4 +1,5 @@
 ﻿using ISFCprotopype.Windows;
+using ISFCprotopype.Windows.DialogWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace ISFCprotopype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new AutorizeWindow());
         }
     }
 }

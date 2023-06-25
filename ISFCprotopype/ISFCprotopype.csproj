@@ -93,11 +93,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>databaseCafeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Windows\IngredientWarehouse.cs">
+    <Compile Include="Windows\DialogWindows\AutorizeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\IngredientWarehouse.Designer.cs">
-      <DependentUpon>IngredientWarehouse.cs</DependentUpon>
+    <Compile Include="Windows\PeopleManagementWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\PeopleManagementWindow.Designer.cs">
+      <DependentUpon>PeopleManagementWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FinancialAccountingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FinancialAccountingWindow.Designer.cs">
+      <DependentUpon>FinancialAccountingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MenuEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MenuEditor.Designer.cs">
+      <DependentUpon>MenuEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IngredientWarehouseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\IngredientWarehouseWindow.Designer.cs">
+      <DependentUpon>IngredientWarehouseWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\CashRegister.cs">
       <SubType>Form</SubType>
@@ -119,8 +140,20 @@
     <EmbeddedResource Include="CustomElements\RoundNumericUpDown.resx">
       <DependentUpon>RoundNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\IngredientWarehouse.resx">
-      <DependentUpon>IngredientWarehouse.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\DialogWindows\AutorizeWindow.resx">
+      <DependentUpon>AutorizeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PeopleManagementWindow.resx">
+      <DependentUpon>PeopleManagementWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\FinancialAccountingWindow.resx">
+      <DependentUpon>FinancialAccountingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MenuEditor.resx">
+      <DependentUpon>MenuEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\IngredientWarehouseWindow.resx">
+      <DependentUpon>IngredientWarehouseWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\CashRegister.resx">
       <DependentUpon>CashRegister.cs</DependentUpon>
@@ -158,9 +191,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Resources\Inter-Medium.ttf" />
-    <EmbeddedResource Include="Resources\Inter-Regular.ttf" />
-    <EmbeddedResource Include="Resources\Rubik-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Inter-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Inter-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Rubik-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

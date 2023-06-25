@@ -1,7 +1,7 @@
 ﻿
 namespace ISFCprotopype
 {
-    partial class CashRegister
+    partial class CashRegisterWindow
     {
         /// <summary>
         /// Обязательная переменная конструктора.

@@ -130,15 +130,5 @@ namespace ISFCprotopype.CustomElements
                 }
             }
         }
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
-        }
-
-        private void Container_BackColorChanged(object sender, EventArgs e)
-        {
-            this.Invalidate();
-        }
     }
 }

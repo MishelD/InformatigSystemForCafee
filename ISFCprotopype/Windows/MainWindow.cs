@@ -22,10 +22,10 @@ namespace ISFCprotopype.Windows
         {
             InitializeComponent();
 
-            //ingredientWarehouseButton.BackgroundColor = greyWhite;
-            //ingredientWarehouseButton.ForeColor = Color.Gray;
-            //ingredientWarehouseButton.BorderSize = 1;
-            //ingredientWarehouseButton.BorderColor = Color.Gray;
+            ingredientWarehouseButton.BackgroundColor = greyWhite;
+            ingredientWarehouseButton.ForeColor = Color.Gray;
+            ingredientWarehouseButton.BorderSize = 1;
+            ingredientWarehouseButton.BorderColor = Color.Gray;
 
             financialAccountingButton.BackgroundColor = greyWhite;
             financialAccountingButton.ForeColor = Color.Gray;
@@ -45,18 +45,44 @@ namespace ISFCprotopype.Windows
 
         private void CashRegisterButton_Click(object sender, EventArgs e)
         {
-            CashRegister cashRegister = new CashRegister();
+            CashRegisterWindow cashRegister = new CashRegisterWindow();
             this.Hide();
-            cashRegister.Closed += (s, args) => this.Close();
+            cashRegister.Closed += (s, args) => this.Show();
             cashRegister.Show();
         }
 
         private void ingredientWarehouseButton_Click(object sender, EventArgs e)
         {
-            IngredientWarehouse ingredientWarehouse = new IngredientWarehouse();
+            IngredientWarehouseWindow ingredientWarehouse = new IngredientWarehouseWindow();
             this.Hide();
-            ingredientWarehouse.Closed += (s, args) => this.Close();
+            ingredientWarehouse.Closed += (s, args) => this.Show();
             ingredientWarehouse.Show();
+        }
+
+        private void financialAccountingButton_Click(object sender, EventArgs e)
+        {
+            FinancialAccountingWindow financialAccounting = new FinancialAccountingWindow();
+            this.Hide();
+            financialAccounting.Closed += (s, args) => this.Show();
+            financialAccounting.Show();
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+
+            MenuEditor menuEditor = new MenuEditor();
+            this.Hide();
+            menuEditor.Closed += (s, args) => this.Show();
+            menuEditor.Show();
+        }
+
+        private void peopleManagementButton_Click(object sender, EventArgs e)
+        {
+
+            PeopleManagementWindow peopleManagement = new PeopleManagementWindow();
+            this.Hide();
+            peopleManagement.Closed += (s, args) => this.Show();
+            peopleManagement.Show();
         }
     }
 }

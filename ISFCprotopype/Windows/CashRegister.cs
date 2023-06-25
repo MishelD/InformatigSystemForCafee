@@ -13,24 +13,17 @@ using ISFCprotopype.databaseCafeDataSetTableAdapters;
 
 namespace ISFCprotopype
 {
-    public partial class CashRegister : Form
+    public partial class CashRegisterWindow : Form
     {
         private Color darkViolet = Color.FromArgb(73, 62, 194);
         private Color violet = Color.FromArgb(93, 95, 239);
         private Color lightViolet = Color.FromArgb(120, 121, 241);
         private Color greyWhite = Color.FromArgb(238, 238, 238);
 
-        public CashRegister()
+        public CashRegisterWindow()
         {
             InitializeComponent();
             SetBGColor();
-            ReceiptItem[] receiptItem;
-            receiptItem = new ReceiptItem[3];
-            for (int i = 0; i < receiptItem.Length; i++)
-            {
-                receiptItem[i] = new ReceiptItem();
-                orderList.Controls.Add(receiptItem[i]);
-            }
             UpdateAmountLabel();
         }
 
@@ -101,18 +94,47 @@ namespace ISFCprotopype
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseCafeDataSet1.Блюда". При необходимости она может быть перемещена или удалена.
             this.блюдаTableAdapter1.Fill(this.databaseCafeDataSet1.Блюда);
+            
+            // Добавление списка блюд в меню из базы данных
             foreach (DataRow row in databaseCafeDataSet1.Блюда)
             {
                 MenuListItem menuItem = new MenuListItem();
-                menuItem.NameItem = (string)row["dish_name"];
-                menuItem.CostItem = (float)Convert.ToSingle(row["price"]);
-                menuItem.MassItem = (float)Convert.ToSingle(row["mass"]);
+                menuItem.ItemDishId = (int)row["dish_id"];
+                menuItem.ItemName = (string)row["dish_name"];
+                menuItem.ItemCost = (float)Convert.ToSingle(row["price"]);
+                menuItem.ItemWeight = (float)Convert.ToSingle(row["mass"]);
+                menuItem.ItemUnitOfMeasure = (string)row["unit_of_measure"];
                 menuFlowLayoutPanel.Controls.Add(menuItem);
                 
-                menuItem.Click += (s, args) =>
+                // Подписка на клик одного из блюд в виде вызова функции добавления позиции в список заказа
+                menuItem.ClickItem += (s, args) =>
                 {
-                    ReceiptItem receiptItem = new ReceiptItem();
-                    orderList.Controls.Add(receiptItem);
+                    MenuListItem clickedMenuItem = (MenuListItem)s;
+                    bool isDuplicate = false;
+
+                    // Проверка на дубликат позиции в списке заказа
+                    foreach (ReceiptItem item in orderList.Controls)
+                    {
+                        if (menuItem.ItemDishId == item.ItemDishId)
+                        {
+                            isDuplicate = true;
+                            item.ItemCount++;
+                            break;
+                        }
+                    }
+                    // Если дубликат не найден
+                    if (!isDuplicate)
+                    {
+                        // Создание позиции в списке заказа
+                        ReceiptItem receiptItem = new ReceiptItem();
+                        receiptItem.ItemDishId = clickedMenuItem.ItemDishId;
+                        receiptItem.ItemName = clickedMenuItem.ItemName;
+                        receiptItem.ItemCost = clickedMenuItem.ItemCost;
+                        receiptItem.ItemWeight = clickedMenuItem.ItemWeight;
+                        receiptItem.ItemUnitOfMeasure = clickedMenuItem.ItemUnitOfMeasure;
+                        receiptItem.UpdateAmountCost();
+                        orderList.Controls.Add(receiptItem);
+                    }
                 };
             }
             //for (int i = 0; i < databaseCafeDataSet.Блюда.Count; i++)

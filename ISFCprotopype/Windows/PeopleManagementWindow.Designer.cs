@@ -1,7 +1,7 @@
 ﻿
 namespace ISFCprotopype
 {
-    partial class IngredientWarehouse
+    partial class PeopleManagementWindow
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,8 +30,6 @@ namespace ISFCprotopype
         private void InitializeComponent()
         {
             this.BarPanel = new System.Windows.Forms.Panel();
-            this.roundButton5 = new ISFCprotopype.CustomElements.RoundButton();
-            this.addButton = new ISFCprotopype.CustomElements.RoundButton();
             this.exitButton = new ISFCprotopype.CustomElements.RoundButton();
             this.listButton = new ISFCprotopype.CustomElements.RoundButton();
             this.ReceiptWrap = new System.Windows.Forms.Panel();
@@ -60,8 +58,6 @@ namespace ISFCprotopype
             // BarPanel
             // 
             this.BarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.BarPanel.Controls.Add(this.roundButton5);
-            this.BarPanel.Controls.Add(this.addButton);
             this.BarPanel.Controls.Add(this.exitButton);
             this.BarPanel.Controls.Add(this.listButton);
             this.BarPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -71,46 +67,6 @@ namespace ISFCprotopype
             this.BarPanel.Padding = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.BarPanel.Size = new System.Drawing.Size(58, 681);
             this.BarPanel.TabIndex = 0;
-            // 
-            // roundButton5
-            // 
-            this.roundButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.roundButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.roundButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.roundButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton5.BorderRadius = 10;
-            this.roundButton5.BorderSize = 0;
-            this.roundButton5.FlatAppearance.BorderSize = 0;
-            this.roundButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton5.ForeColor = System.Drawing.Color.White;
-            this.roundButton5.Image = global::ISFCprotopype.Properties.Resources.minusLightSmall;
-            this.roundButton5.Location = new System.Drawing.Point(9, 124);
-            this.roundButton5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
-            this.roundButton5.Name = "roundButton5";
-            this.roundButton5.Size = new System.Drawing.Size(40, 40);
-            this.roundButton5.TabIndex = 6;
-            this.roundButton5.TextColor = System.Drawing.Color.White;
-            this.roundButton5.UseVisualStyleBackColor = false;
-            // 
-            // addButton
-            // 
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(95)))), ((int)(((byte)(239)))));
-            this.addButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.addButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.addButton.BorderRadius = 10;
-            this.addButton.BorderSize = 0;
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Image = global::ISFCprotopype.Properties.Resources.plusLightSmall;
-            this.addButton.Location = new System.Drawing.Point(9, 67);
-            this.addButton.Margin = new System.Windows.Forms.Padding(0, 0, 0, 17);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(40, 40);
-            this.addButton.TabIndex = 5;
-            this.addButton.TextColor = System.Drawing.Color.White;
-            this.addButton.UseVisualStyleBackColor = false;
             // 
             // exitButton
             // 
@@ -291,7 +247,7 @@ namespace ISFCprotopype
             this.roundButton1.Name = "roundButton1";
             this.roundButton1.Size = new System.Drawing.Size(168, 168);
             this.roundButton1.TabIndex = 21;
-            this.roundButton1.Text = "Наименование ингредиента";
+            this.roundButton1.Text = "Наименование блюда";
             this.roundButton1.TextColor = System.Drawing.Color.Black;
             this.roundButton1.UseVisualStyleBackColor = false;
             // 
@@ -311,7 +267,7 @@ namespace ISFCprotopype
             this.roundButton2.Name = "roundButton2";
             this.roundButton2.Size = new System.Drawing.Size(168, 168);
             this.roundButton2.TabIndex = 22;
-            this.roundButton2.Text = "Наименование ингредиента";
+            this.roundButton2.Text = "Наименование блюда";
             this.roundButton2.TextColor = System.Drawing.Color.Black;
             this.roundButton2.UseVisualStyleBackColor = false;
             // 
@@ -331,7 +287,7 @@ namespace ISFCprotopype
             this.roundButton3.Name = "roundButton3";
             this.roundButton3.Size = new System.Drawing.Size(168, 168);
             this.roundButton3.TabIndex = 23;
-            this.roundButton3.Text = "Наименование ингредиента";
+            this.roundButton3.Text = "Наименование блюда";
             this.roundButton3.TextColor = System.Drawing.Color.Black;
             this.roundButton3.UseVisualStyleBackColor = false;
             // 
@@ -351,7 +307,7 @@ namespace ISFCprotopype
             this.roundButton6.Name = "roundButton6";
             this.roundButton6.Size = new System.Drawing.Size(168, 168);
             this.roundButton6.TabIndex = 24;
-            this.roundButton6.Text = "Наименование ингредиента";
+            this.roundButton6.Text = "Наименование блюда";
             this.roundButton6.TextColor = System.Drawing.Color.Black;
             this.roundButton6.UseVisualStyleBackColor = false;
             // 
@@ -371,7 +327,7 @@ namespace ISFCprotopype
             this.roundButton7.Name = "roundButton7";
             this.roundButton7.Size = new System.Drawing.Size(168, 168);
             this.roundButton7.TabIndex = 25;
-            this.roundButton7.Text = "Наименование ингредиента";
+            this.roundButton7.Text = "Наименование блюда";
             this.roundButton7.TextColor = System.Drawing.Color.Black;
             this.roundButton7.UseVisualStyleBackColor = false;
             // 
@@ -391,7 +347,7 @@ namespace ISFCprotopype
             this.roundButton8.Name = "roundButton8";
             this.roundButton8.Size = new System.Drawing.Size(168, 168);
             this.roundButton8.TabIndex = 26;
-            this.roundButton8.Text = "Наименование ингредиента";
+            this.roundButton8.Text = "Наименование блюда";
             this.roundButton8.TextColor = System.Drawing.Color.Black;
             this.roundButton8.UseVisualStyleBackColor = false;
             // 
@@ -411,7 +367,7 @@ namespace ISFCprotopype
             this.roundButton9.Name = "roundButton9";
             this.roundButton9.Size = new System.Drawing.Size(168, 168);
             this.roundButton9.TabIndex = 27;
-            this.roundButton9.Text = "Наименование ингредиента";
+            this.roundButton9.Text = "Наименование блюда";
             this.roundButton9.TextColor = System.Drawing.Color.Black;
             this.roundButton9.UseVisualStyleBackColor = false;
             // 
@@ -431,7 +387,7 @@ namespace ISFCprotopype
             this.roundButton10.Name = "roundButton10";
             this.roundButton10.Size = new System.Drawing.Size(168, 168);
             this.roundButton10.TabIndex = 28;
-            this.roundButton10.Text = "Наименование ингредиента";
+            this.roundButton10.Text = "Наименование блюда";
             this.roundButton10.TextColor = System.Drawing.Color.Black;
             this.roundButton10.UseVisualStyleBackColor = false;
             // 
@@ -445,7 +401,7 @@ namespace ISFCprotopype
             this.panel1.Size = new System.Drawing.Size(850, 681);
             this.panel1.TabIndex = 3;
             // 
-            // IngredientWarehouse
+            // MenuEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -454,7 +410,7 @@ namespace ISFCprotopype
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ReceiptWrap);
             this.Controls.Add(this.BarPanel);
-            this.Name = "IngredientWarehouse";
+            this.Name = "MenuEditor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Склад ингредиентов";
@@ -483,8 +439,6 @@ namespace ISFCprotopype
         private CustomElements.RoundButton roundButton1;
         private CustomElements.RoundButton roundButton2;
         private CustomElements.RoundButton roundButton3;
-        private CustomElements.RoundButton roundButton5;
-        private CustomElements.RoundButton addButton;
         private CustomElements.RoundButton roundButton6;
         private CustomElements.RoundButton roundButton7;
         private CustomElements.RoundButton roundButton8;

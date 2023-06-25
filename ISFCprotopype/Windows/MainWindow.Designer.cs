@@ -141,6 +141,7 @@
             this.ingredientWarehouseButton.BorderRadius = 39;
             this.ingredientWarehouseButton.BorderSize = 0;
             this.ingredientWarehouseButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ingredientWarehouseButton.Enabled = false;
             this.ingredientWarehouseButton.FlatAppearance.BorderSize = 0;
             this.ingredientWarehouseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ingredientWarehouseButton.Font = new System.Drawing.Font("Inter Medium", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -218,6 +219,7 @@
             this.financialAccountingButton.Text = "Финансовый учет";
             this.financialAccountingButton.TextColor = System.Drawing.Color.White;
             this.financialAccountingButton.UseVisualStyleBackColor = false;
+            this.financialAccountingButton.Click += new System.EventHandler(this.financialAccountingButton_Click);
             // 
             // menuButton
             // 
@@ -241,6 +243,7 @@
             this.menuButton.Text = "Меню";
             this.menuButton.TextColor = System.Drawing.Color.White;
             this.menuButton.UseVisualStyleBackColor = false;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
             // panel2
             // 
@@ -275,6 +278,7 @@
             this.peopleManagementButton.Text = "Управление персоналом";
             this.peopleManagementButton.TextColor = System.Drawing.Color.White;
             this.peopleManagementButton.UseVisualStyleBackColor = false;
+            this.peopleManagementButton.Click += new System.EventHandler(this.peopleManagementButton_Click);
             // 
             // MainWindow
             // 

@@ -12,7 +12,6 @@ namespace ISFCprotopype.CustomElements
 {
     class ReceiptItem : RoundPanel
     {
-        //private Panel _itemWrap;
         private TableLayoutPanel _itemLayoutPanel;
         private Label _itemNameLabel;
         private Panel _itemNumericUpDownWrap;
@@ -26,13 +25,81 @@ namespace ISFCprotopype.CustomElements
 
         private EventHandler onAmountValueChanged;
 
+        private int _itemDishId;
+        public int ItemDishId
+        {
+            get { return _itemDishId; }
+            set { _itemDishId = value; }
+        }
+
+        private string _itemName;
+        [DefaultValue("Наименование блюда")]
+        public string ItemName
+        {
+            get { return _itemName; }
+            set
+            {
+                _itemName = value;
+                _itemNameLabel.Text = _itemName;
+            }
+        }
+
+        private float _itemWeight;
+        public float ItemWeight
+        {
+            get { return _itemWeight; }
+            set
+            {
+                _itemWeight = value;
+                _itemWeightLabel.Text = string.Format("{0} {1}", _itemWeight, _itemUnitOfMeasure);
+            }
+        }
+
+        private string _itemUnitOfMeasure;
+        public string ItemUnitOfMeasure
+        {
+            get { return _itemUnitOfMeasure; }
+            set
+            {
+                _itemUnitOfMeasure = value;
+                _itemWeightLabel.Text = string.Format("{0} {1}", _itemWeight, _itemUnitOfMeasure);
+            }
+        }
+
         private float _itemCost;
+        [DefaultValue(0f)]
+        public float ItemCost
+        {
+            get { return _itemCost; }
+            set
+            {
+                _itemCost = value;
+                _itemCostLabel.Text = string.Format("{0} ₽", _itemCost);
+            }
+        }
+
+        public int ItemCount
+        {
+            get { return _itemNumericUpDown.Value; }
+            set
+            {
+                _itemNumericUpDown.Value = (int)value;
+                _itemAmountCostLabel.Text = string.Format("{0} ₽", AmountCost);
+            }
+        }
+
+        // Костыль который по-хорошему нужно убрать, вызывает обновление данных о сумме стоимости всех блюд одной позиции
+        public void UpdateAmountCost()
+        {
+            _itemAmountCostLabel.Text = string.Format("{0} ₽", AmountCost);
+        }
 
         public float AmountCost
         {
             get { return _itemCost * _itemNumericUpDown.Value; }
         }
-
+        
+        // Акцентные цвета
         private Color darkViolet = Color.FromArgb(73, 62, 194);
         private Color violet = Color.FromArgb(93, 95, 239);
         private Color lightViolet = Color.FromArgb(120, 121, 241);
@@ -83,7 +150,6 @@ namespace ISFCprotopype.CustomElements
                 AnchorStyles.Bottom |
                 AnchorStyles.Left |
                 AnchorStyles.Right);
-            //_itemNameLabel.BorderStyle = BorderStyle.FixedSingle;
             _itemLayoutPanel.Controls.Add(_itemNameLabel, 0, 0);
 
             _itemNumericUpDownWrap = new Panel();
@@ -112,14 +178,13 @@ namespace ISFCprotopype.CustomElements
             _itemLayoutPanel.Controls.Add(_itemCharacteristicLayoutPanel, 0, 1);
 
             _itemWeightLabel = new Label();
-            _itemWeightLabel.Text = string.Format("{0} {1}", 1000, "гр.");
+            _itemWeightLabel.Text = string.Format("{0} {1}", _itemWeight, _itemUnitOfMeasure);
             _itemWeightLabel.Font = new Font(new FontFamily("Inter"), 7.5292857248934f);
             _itemWeightLabel.TextAlign = ContentAlignment.MiddleLeft;
             _itemWeightLabel.AutoSize = false;
             _itemWeightLabel.MaximumSize = new Size(100, 44);
             _itemWeightLabel.Width = (_itemCharacteristicLayoutPanel.Width / 2) - 8;
             _itemWeightLabel.Height = _itemCharacteristicLayoutPanel.Height - 8;
-            //_itemWeightLabel.BorderStyle = BorderStyle.FixedSingle;
             _itemWeightLabel.Anchor = (AnchorStyles.Top |
                 AnchorStyles.Bottom |
                 AnchorStyles.Left |
@@ -128,14 +193,13 @@ namespace ISFCprotopype.CustomElements
 
             _itemCostLabel = new Label();
             _itemCostLabel = new Label();
-            _itemCostLabel.Text = string.Format("{0} {1}", _itemCost, "₽");
+            _itemCostLabel.Text = string.Format("{0} ₽", _itemCost);
             _itemCostLabel.Font = new Font(new FontFamily("Inter"), 7.5292857248934f);
             _itemCostLabel.TextAlign = ContentAlignment.MiddleRight;
             _itemCostLabel.AutoSize = false;
             _itemCostLabel.MaximumSize = new Size(100, 44);
             _itemCostLabel.Width = (_itemCharacteristicLayoutPanel.Width / 2) - 8;
             _itemCostLabel.Height = _itemCharacteristicLayoutPanel.Height - 8;
-            //_itemCostLabel.BorderStyle = BorderStyle.FixedSingle;
             _itemCostLabel.Anchor = (AnchorStyles.Top |
                 AnchorStyles.Bottom |
                 AnchorStyles.Left |
@@ -161,7 +225,6 @@ namespace ISFCprotopype.CustomElements
             _itemAmountLabel.MaximumSize = new Size(100, 44);
             _itemAmountLabel.Width = (_itemAmountLayoutPanel.Width / 2) - 8;
             _itemAmountLabel.Height = _itemAmountLayoutPanel.Height - 8;
-            //_itemAmountLabel.BorderStyle = BorderStyle.FixedSingle;
             _itemAmountLabel.Anchor = (AnchorStyles.Top |
                 AnchorStyles.Bottom |
                 AnchorStyles.Left |
@@ -171,14 +234,13 @@ namespace ISFCprotopype.CustomElements
             _itemAmountCostLabel = new Label();
             _itemAmountCostLabel = new Label();
             _itemAmountCostLabel = new Label();
-            _itemAmountCostLabel.Text = string.Format("{0} {1}", (float)_itemNumericUpDown.Value * _itemCost, "₽");
+            _itemAmountCostLabel.Text = string.Format("{0} ₽", AmountCost);
             _itemAmountCostLabel.Font = new Font(new FontFamily("Inter"), 7.5292857248934f);
             _itemAmountCostLabel.TextAlign = ContentAlignment.MiddleLeft;
             _itemAmountCostLabel.AutoSize = false;
             _itemAmountCostLabel.MaximumSize = new Size(100, 44);
             _itemAmountCostLabel.Width = (_itemAmountLayoutPanel.Width / 2) - 8;
             _itemAmountCostLabel.Height = _itemAmountLayoutPanel.Height - 8;
-            //_itemAmountCostLabel.BorderStyle = BorderStyle.FixedSingle;
             _itemAmountCostLabel.Anchor = (AnchorStyles.Top |
                 AnchorStyles.Bottom |
                 AnchorStyles.Left |
